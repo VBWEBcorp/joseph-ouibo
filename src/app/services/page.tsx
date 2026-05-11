@@ -8,21 +8,37 @@ import {
 } from '@/components/seo/json-ld'
 
 const description =
-  'Création de site, SEO, identité visuelle, développement sur mesure : découvrez nos services pour développer votre activité en ligne.'
+  'Nettoyage de bâtiments, lavage de façades, fin de chantier, baraques BTP, locations Airbnb, sortie de poubelles, maçonnerie : toutes les prestations de Concept Hygiène à Mée-sur-Seine et 100 km autour.'
 
 const services = [
-  { title: 'Création de site vitrine', desc: 'Un site moderne, rapide et responsive qui présente clairement votre activité et inspire confiance à vos visiteurs.' },
-  { title: 'Application web', desc: 'Outils métier, plateformes de réservation, espaces clients : des applications pensées pour simplifier votre quotidien.' },
-  { title: 'Référencement naturel (SEO)', desc: 'Optimisation technique, contenu stratégique et suivi de positionnement pour gagner en visibilité sur Google.' },
-  { title: 'Identité visuelle', desc: 'Logo, charte graphique, supports de communication : une image cohérente qui vous ressemble.' },
-  { title: 'Communication digitale', desc: 'Stratégie de contenu, réseaux sociaux et campagnes pour développer votre audience en ligne.' },
-  { title: 'Développement sur mesure', desc: 'Intégrations, automatisations, API : des solutions techniques taillées pour vos besoins spécifiques.' },
-  { title: 'Maintenance & sécurité', desc: 'Mises à jour, sauvegardes, monitoring et corrections pour un site toujours performant et sécurisé.' },
-  { title: 'Analyse & reporting', desc: 'Tableaux de bord clairs pour suivre vos performances, comprendre vos visiteurs et ajuster votre stratégie.' },
+  {
+    title: 'Nettoyage courant des bâtiments',
+    desc: 'Appartements, maisons, bureaux, commerces et centres commerciaux. Entretien régulier ou ponctuel avec matériel professionnel.',
+  },
+  {
+    title: 'Lavage extérieur',
+    desc: 'Façades, toitures et terrasses : nettoyage haute pression ou doux pour tous types de surfaces.',
+  },
+  {
+    title: 'Nettoyage de chantier',
+    desc: 'Baraques, vestiaires, containers WC et nettoyage de fin de chantier. Intervention rapide en Île-de-France.',
+  },
+  {
+    title: 'Locations Airbnb & courte durée',
+    desc: 'Ménage entre deux séjours, gestion du linge et de l\'inventaire pour hôtes et conciergeries.',
+  },
+  {
+    title: 'Sortie de poubelles & gestion des bacs',
+    desc: 'Sortie / rentrée des bacs, nettoyage des locaux à poubelles pour copropriétés et particuliers.',
+  },
+  {
+    title: 'Maçonnerie & peinture',
+    desc: 'Petits travaux, reprises de peinture et remise en état de logements en complément du nettoyage.',
+  },
 ]
 
 export const metadata: Metadata = {
-  title: 'Services',
+  title: 'Nos prestations',
   description,
   alternates: { canonical: '/services' },
 }
@@ -30,10 +46,10 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    webPageJsonLd('Services', description, '/services'),
+    webPageJsonLd('Nos prestations', description, '/services'),
     breadcrumbJsonLd([
       { name: 'Accueil', path: '/' },
-      { name: 'Services', path: '/services' },
+      { name: 'Prestations', path: '/services' },
     ]),
     ...services.map((s) => serviceJsonLd(s.title, s.desc, '/services')),
   ],

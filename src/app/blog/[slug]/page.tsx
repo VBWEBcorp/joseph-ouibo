@@ -5,6 +5,7 @@ import { connectDB } from '@/lib/db'
 import { BlogPost } from '@/models/Blog'
 import { visiblePostFilter } from '@/lib/blog-filters'
 import { siteConfig } from '@/lib/seo'
+import { findFallbackPostBySlug, fallbackBlogPosts } from '@/lib/fallback-blog-posts'
 import BlogPostContent from './blog-post-content'
 
 type Params = Promise<{ slug: string }>
@@ -14,12 +15,20 @@ export const revalidate = 3600
 
 // Pre-render all published blog posts at build time
 export async function generateStaticParams() {
+  const fallbackParams = fallbackBlogPosts.map((p) => ({ slug: p.slug }))
   try {
     await connectDB()
     const posts = await BlogPost.find(visiblePostFilter()).select('slug').lean()
-    return posts.map((post) => ({ slug: (post as any).slug }))
+    const dbParams = posts.map((post) => ({ slug: (post as any).slug }))
+    // On combine DB + fallback (utile pour la démo sans DB)
+    const seen = new Set<string>()
+    return [...dbParams, ...fallbackParams].filter((p) => {
+      if (seen.has(p.slug)) return false
+      seen.add(p.slug)
+      return true
+    })
   } catch {
-    return []
+    return fallbackParams
   }
 }
 
@@ -29,7 +38,19 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
   try {
     await connectDB()
-    const post = await BlogPost.findOne({ slug, ...visiblePostFilter() }).lean() as any
+    let post: any = await BlogPost.findOne({ slug, ...visiblePostFilter() }).lean()
+
+    // Fallback : si pas en base, on regarde dans les articles de démo
+    if (!post) {
+      const fb = findFallbackPostBySlug(slug)
+      if (fb) {
+        post = {
+          ...fb,
+          publishedAt: new Date(fb.publishedAt),
+          updatedAt: new Date(fb.publishedAt),
+        }
+      }
+    }
 
     if (!post) return {}
 
@@ -72,45 +93,82 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 export default async function BlogPostPage({ params }: { params: Params }) {
   const { slug } = await params
 
-  // Server-side check: if post doesn't exist or isn't published, 404
+  let post: any = null
   try {
     await connectDB()
-    const post = await BlogPost.findOne({ slug, ...visiblePostFilter() }).lean() as any
-
-    if (!post) notFound()
-
-    // Render JSON-LD server-side for structured data
-    const jsonLd = {
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
-      headline: post.metaTitle || post.title,
-      description: post.metaDescription || post.excerpt,
-      image: post.coverImage || undefined,
-      datePublished: post.publishedAt?.toISOString(),
-      dateModified: post.updatedAt?.toISOString(),
-      author: post.author ? { '@type': 'Person', name: post.author } : undefined,
-      publisher: {
-        '@type': 'Organization',
-        name: siteConfig.name,
-        url: siteConfig.url,
-      },
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': `${siteConfig.url}/blog/${post.slug}`,
-      },
-      keywords: post.tags?.join(', '),
-    }
-
-    return (
-      <>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <BlogPostContent slug={slug} />
-      </>
-    )
+    post = await BlogPost.findOne({ slug, ...visiblePostFilter() }).lean()
   } catch {
-    notFound()
+    // DB indisponible — on continue avec le fallback ci-dessous
   }
+
+  // Fallback : si pas en base (ou DB KO), on cherche dans les articles de démo
+  if (!post) {
+    const fb = findFallbackPostBySlug(slug)
+    if (fb) {
+      post = {
+        ...fb,
+        publishedAt: new Date(fb.publishedAt),
+        updatedAt: new Date(fb.publishedAt),
+        published: true,
+      }
+    }
+  }
+
+  if (!post) notFound()
+
+  // JSON-LD pour le référencement
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.metaTitle || post.title,
+    description: post.metaDescription || post.excerpt,
+    image: post.coverImage || undefined,
+    datePublished: post.publishedAt instanceof Date
+      ? post.publishedAt.toISOString()
+      : post.publishedAt,
+    dateModified: post.updatedAt instanceof Date
+      ? post.updatedAt.toISOString()
+      : post.updatedAt,
+    author: post.author ? { '@type': 'Person', name: post.author } : undefined,
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteConfig.url}/blog/${post.slug}`,
+    },
+    keywords: post.tags?.join(', '),
+  }
+
+  // On sérialise un post propre à passer au client component
+  const initialPost = {
+    _id: String(post._id ?? post.slug),
+    title: post.title,
+    slug: post.slug,
+    excerpt: post.excerpt ?? '',
+    content: post.content ?? '',
+    coverImage: post.coverImage ?? '',
+    category: post.category ?? '',
+    tags: post.tags ?? [],
+    author: post.author ?? '',
+    published: true,
+    publishedAt:
+      post.publishedAt instanceof Date
+        ? post.publishedAt.toISOString()
+        : post.publishedAt,
+    metaTitle: post.metaTitle,
+    metaDescription: post.metaDescription,
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BlogPostContent slug={slug} initialPost={initialPost} />
+    </>
+  )
 }

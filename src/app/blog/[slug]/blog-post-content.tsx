@@ -16,7 +16,7 @@ interface BlogPost {
   category: string
   tags: string[]
   author: string
-  published: boolean
+  published?: boolean
   publishedAt: string
   metaTitle?: string
   metaDescription?: string
@@ -30,12 +30,20 @@ function estimateReadTime(html: string) {
   return Math.max(1, Math.ceil(words / 200))
 }
 
-export default function BlogPostContent({ slug }: { slug: string }) {
-  const [post, setPost] = useState<BlogPost | null>(null)
-  const [loading, setLoading] = useState(true)
+export default function BlogPostContent({
+  slug,
+  initialPost,
+}: {
+  slug: string
+  initialPost?: BlogPost | null
+}) {
+  const [post, setPost] = useState<BlogPost | null>(initialPost ?? null)
+  const [loading, setLoading] = useState(!initialPost)
   const [notFound, setNotFound] = useState(false)
 
   useEffect(() => {
+    if (initialPost) return // déjà servi côté serveur, pas besoin de re-fetch
+
     const fetchPost = async () => {
       try {
         const response = await fetch(`/api/blog/posts/${slug}`)
@@ -44,7 +52,7 @@ export default function BlogPostContent({ slug }: { slug: string }) {
           return
         }
         const data = await response.json()
-        if (!data.published) {
+        if (data.published === false) {
           setNotFound(true)
           return
         }
@@ -56,7 +64,7 @@ export default function BlogPostContent({ slug }: { slug: string }) {
       }
     }
     fetchPost()
-  }, [slug])
+  }, [slug, initialPost])
 
   if (loading) {
     return (

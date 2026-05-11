@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { Heart, Lightbulb, Users } from 'lucide-react'
+import { Award, HeartHandshake, ShieldCheck } from 'lucide-react'
 import Image from 'next/image'
 import { useRef } from 'react'
 
@@ -9,28 +9,37 @@ import { CtaSection } from '@/components/sections/cta-section'
 import { PageHero } from '@/components/sections/page-hero'
 import { SectionTitle } from '@/components/ui/section-title'
 import { useContent } from '@/hooks/use-content'
+import { aboutImages, pageHeroImages } from '@/lib/images'
 
 const ease = [0.22, 1, 0.36, 1] as const
-const defaultIcons = [Heart, Lightbulb, Users]
+const defaultIcons = [HeartHandshake, ShieldCheck, Award]
 
 const defaults = {
   hero: {
     eyebrow: 'À propos',
-    title: 'Une équipe engagée à vos côtés',
-    description: 'Nous croyons que chaque entreprise mérite une présence en ligne à la hauteur de ses ambitions. Depuis notre création, nous accompagnons artisans, PME et indépendants avec des solutions simples, efficaces et soignées.',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80',
+    title: 'Concept Hygiène, le nettoyage par un vrai pro',
+    description:
+      "Une entreprise familiale du Mée-sur-Seine, qualifiée Qualibat depuis 2018, qui intervient pour les particuliers, les copropriétés, les entreprises et les chantiers du BTP dans toute l'Île-de-France.",
+    image: pageHeroImages.about,
   },
   values: [
-    { title: 'Proximité', description: 'Un interlocuteur unique, disponible, qui connaît votre projet sur le bout des doigts.' },
-    { title: 'Clarté', description: 'Pas de jargon inutile. Des explications simples, des livrables concrets.' },
-    { title: 'Sur mesure', description: "Chaque projet est différent. Nous adaptons nos solutions à votre réalité, pas l'inverse." },
+    {
+      title: 'Proximité',
+      description:
+        "Un interlocuteur unique du devis à la facture. Pas de plateforme, pas de sous-traitance opaque : c'est Joseph qui vient voir, et Joseph qui suit le chantier.",
+    },
+    {
+      title: 'Sérieux',
+      description:
+        "Devis détaillé sur place, prix tenu, délais respectés. Concept Hygiène est qualifiée Qualibat 2018, gage de respect des règles de l'art.",
+    },
+    {
+      title: 'Polyvalence',
+      description:
+        "Nettoyage courant, lavage extérieur, fin de chantier, Airbnb, sortie de poubelles, petits travaux : un seul prestataire pour tous vos besoins.",
+    },
   ],
-  gallery: [
-    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80',
-  ],
+  gallery: [...aboutImages],
 }
 
 function ValuesTimeline({ values }: { values: any[] }) {
@@ -57,7 +66,7 @@ function ValuesTimeline({ values }: { values: any[] }) {
 
       <ul className="space-y-12 md:space-y-16">
         {values.map((v: any, i: number) => {
-          const Icon = defaultIcons[i] ?? Heart
+          const Icon = defaultIcons[i] ?? HeartHandshake
           const isRight = i % 2 === 1
           return (
             <li key={v.title || i} className="relative">
@@ -133,14 +142,18 @@ export function AboutContent() {
 
       <section className="border-b border-border/60 bg-muted/10">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <SectionTitle eyebrow="Nos valeurs" title="Ce qui nous guide au quotidien" />
+          <SectionTitle
+            eyebrow="Notre histoire"
+            title="Du chantier au logement, un seul interlocuteur"
+            description="Joseph a fondé Concept Hygiène pour répondre à un constat simple : trouver un nettoyage à la fois sérieux, polyvalent et joignable est devenu compliqué. L'entreprise est qualifiée Qualibat depuis 2018 et intervient aussi bien sur les bâtiments que sur les chantiers BTP."
+          />
           <ValuesTimeline values={values} />
         </div>
       </section>
 
       <section className="border-b border-border/60">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <SectionTitle eyebrow="En images" title="Notre quotidien" />
+          <SectionTitle eyebrow="En images" title="Notre quotidien sur le terrain" />
           <div className="mt-14 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
             {gallery.map((src: string, i: number) => (
               <motion.div
@@ -153,7 +166,7 @@ export function AboutContent() {
               >
                 <Image
                   src={src}
-                  alt=""
+                  alt="Réalisation Concept Hygiène"
                   fill
                   sizes="(min-width:768px) 25vw, 50vw"
                   loading="lazy"

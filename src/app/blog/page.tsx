@@ -4,6 +4,7 @@ import { connectDB } from '@/lib/db'
 import { BlogSettings, BlogPost } from '@/models/Blog'
 import { visiblePostFilter } from '@/lib/blog-filters'
 import { siteConfig } from '@/lib/seo'
+import { fallbackBlogPosts, fallbackBlogSettings } from '@/lib/fallback-blog-posts'
 import BlogPageContent from './blog-page-content'
 
 export const revalidate = 3600
@@ -43,12 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-const defaultSettings = {
-  enabled: true,
-  title: 'Nos dernières actualités',
-  description: 'Retrouvez nos conseils, nos projets récents et les tendances du secteur.',
-  eyebrow: 'Blog',
-}
+const defaultSettings = fallbackBlogSettings
 
 export default async function BlogPage() {
   let settings: any = defaultSettings
@@ -73,6 +69,11 @@ export default async function BlogPage() {
       publishedAt: p.publishedAt ? new Date(p.publishedAt).toISOString() : null,
     }))
 
+    // Si la DB n'a aucun article, on utilise les articles de démonstration
+    if (posts.length === 0) {
+      posts = fallbackBlogPosts
+    }
+
     jsonLd = {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
@@ -95,7 +96,8 @@ export default async function BlogPage() {
       },
     }
   } catch {
-    // Fallback gracieux : la page rend avec settings par défaut et liste vide
+    // Fallback gracieux : DB indisponible, on injecte les articles de démo
+    posts = fallbackBlogPosts
   }
 
   return (

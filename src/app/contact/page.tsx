@@ -4,10 +4,10 @@ import { ContactContent } from './contact-content'
 import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 
 const description =
-  'Contactez-nous pour discuter de votre projet. Devis gratuit, réponse rapide.'
+  "Contactez Concept Hygiène : nettoyage à Mée-sur-Seine et 100 km à la ronde. Tél. 07 61 05 57 39, devis gratuit sous 24h, intervention partout en Île-de-France."
 
 export const metadata: Metadata = {
-  title: 'Contact',
+  title: 'Contact & devis gratuit',
   description,
   alternates: { canonical: '/contact' },
 }

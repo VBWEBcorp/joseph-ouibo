@@ -44,6 +44,9 @@ export default function LegalPage() {
           <p className="mt-4 text-sm text-muted-foreground">
             Dernière mise à jour : [JJ/MM/AAAA]
           </p>
+          <div className="mt-6 rounded-xl border border-amber-300/40 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-500/30 dark:bg-amber-500/10 dark:text-amber-200">
+            <strong>Maquette :</strong> les champs entre crochets <code>[…]</code> sont à compléter par Concept Hygiène avant la mise en ligne (SIRET, forme juridique, hébergeur, etc.).
+          </div>
 
           <article className="mt-10 space-y-10 text-sm leading-relaxed text-muted-foreground [&_h2]:font-display [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-foreground [&_h3]:text-sm [&_h3]:font-semibold [&_h3]:text-foreground">
 

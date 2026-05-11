@@ -1,7 +1,27 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git pull *)"
+      "Bash(git pull *)",
+      "WebFetch(domain:concepthygiene.fr)",
+      "Bash(curl -s -o /dev/null -w \"Home: %{http_code} \\(%{size_download} bytes\\)\\\\n\" http://localhost:3777/)",
+      "Bash(curl -s -o /dev/null -w \"Services: %{http_code} \\(%{size_download} bytes\\)\\\\n\" http://localhost:3777/services)",
+      "Bash(curl -s -o /dev/null -w \"About: %{http_code} \\(%{size_download} bytes\\)\\\\n\" http://localhost:3777/a-propos)",
+      "Bash(curl -s -o /dev/null -w \"Contact: %{http_code} \\(%{size_download} bytes\\)\\\\n\" http://localhost:3777/contact)",
+      "Bash(curl -s -o /dev/null -w \"ComingSoon: %{http_code} \\(%{size_download} bytes\\)\\\\n\" \"http://localhost:3777/coming-soon?p=test\")",
+      "Bash(curl -s http://localhost:3777/)",
+      "Bash(grep -oE \"Concept Hygi.{0,15}|Qualibat.{0,15}|baraque.{0,30}|07 61 05 57 39|100 km|Mée-sur-Seine\")",
+      "Bash(curl -s -o /dev/null -w \"Home: %{http_code}\\\\n\" http://localhost:3777/)",
+      "Bash(curl -s -o /dev/null -w \"Services: %{http_code}\\\\n\" http://localhost:3777/services)",
+      "Bash(curl -s -o /dev/null -w \"About: %{http_code}\\\\n\" http://localhost:3777/a-propos)",
+      "Bash(curl -s -o /dev/null -w \"Contact: %{http_code}\\\\n\" http://localhost:3777/contact)",
+      "Bash(curl -s -o /dev/null -w \"Gallery: %{http_code}\\\\n\" http://localhost:3777/gallery)",
+      "Bash(curl -s -o /dev/null -w \"Blog list: %{http_code}\\\\n\" http://localhost:3777/blog)",
+      "Bash(curl -s -o /dev/null -w \"Blog post: %{http_code}\\\\n\" http://localhost:3777/blog/erreurs-nettoyage-fin-de-chantier)",
+      "Bash(curl -s -o /dev/null -w \"ComingSoon: %{http_code}\\\\n\" \"http://localhost:3777/coming-soon?p=Test\")",
+      "Bash(curl -s -o /dev/null -w \"Mentions: %{http_code}\\\\n\" http://localhost:3777/mentions-legales)",
+      "Bash(curl -s -o NUL -w \"Home: %{http_code}\\\\n\" http://localhost:3002/)",
+      "Bash(curl -s -o NUL -w \"Services: %{http_code}\\\\n\" http://localhost:3002/services)",
+      "Bash(curl -s -o NUL -w \"Contact: %{http_code}\\\\n\" http://localhost:3002/contact)"
     ]
   }
 }

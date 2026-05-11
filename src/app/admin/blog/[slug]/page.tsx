@@ -191,7 +191,7 @@ export default function BlogPostEditor({ params }: { params: Promise<{ slug: str
               onClick={handleSave}
               disabled={saving}
               size="sm"
-              className={saved ? 'bg-emerald-600 hover:bg-emerald-600' : ''}
+              className={saved ? 'bg-blue-600 hover:bg-blue-600' : ''}
             >
               {saved ? (
                 <><Check className="size-3.5" /> Sauvegardé</>

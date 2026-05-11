@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, MapPin, Phone } from 'lucide-react'
+import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 
 import { PageHero } from '@/components/sections/page-hero'
 import { Button } from '@/components/ui/button'
@@ -9,16 +9,18 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useContent } from '@/hooks/use-content'
+import { pageHeroImages } from '@/lib/images'
 import { siteConfig } from '@/lib/seo'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
 const defaults = {
   hero: {
-    eyebrow: 'Contact',
-    title: 'Parlons de votre projet',
-    description: 'Remplissez le formulaire ci-dessous ou contactez-nous directement. Nous répondons sous 24h.',
-    image: 'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1920&q=80',
+    eyebrow: 'Contact · Devis gratuit',
+    title: 'Parlons de votre besoin de nettoyage',
+    description:
+      "Appartement, chantier, location courte durée, copropriété : décrivez-nous votre situation. On vous rappelle sous 24h pour fixer un rendez-vous et un devis gratuit sur place.",
+    image: pageHeroImages.contact,
   },
   info: {
     phone: siteConfig.phone,
@@ -62,7 +64,7 @@ export function ContactContent() {
             >
               <Card className="rounded-2xl border-border/80 bg-card/70 shadow-[var(--shadow-md)] ring-1 ring-foreground/5">
                 <CardHeader>
-                  <CardTitle className="font-display text-lg">Envoyer un message</CardTitle>
+                  <CardTitle className="font-display text-lg">Demander un devis</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
@@ -78,23 +80,47 @@ export function ContactContent() {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input id="email" name="email" type="email" placeholder="jean@entreprise.fr" autoComplete="email" className="h-11 rounded-xl" />
+                      <Input id="email" name="email" type="email" placeholder="jean@exemple.fr" autoComplete="email" className="h-11 rounded-xl" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Téléphone (optionnel)</Label>
+                      <Label htmlFor="phone">Téléphone</Label>
                       <Input id="phone" name="phone" type="tel" placeholder="06 12 34 56 78" autoComplete="tel" className="h-11 rounded-xl" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="message">Votre message</Label>
+                      <Label htmlFor="prestation">Type de prestation</Label>
+                      <select
+                        id="prestation"
+                        name="prestation"
+                        defaultValue=""
+                        className="h-11 w-full rounded-xl border border-input bg-transparent px-3 text-sm text-foreground transition-colors focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+                      >
+                        <option value="" disabled>Choisir une prestation…</option>
+                        <option value="batiment">Nettoyage de bâtiment (appart, maison, bureau)</option>
+                        <option value="exterieur">Lavage extérieur (façade, toiture, terrasse)</option>
+                        <option value="chantier">Nettoyage de chantier / fin de chantier</option>
+                        <option value="airbnb">Location Airbnb / courte durée</option>
+                        <option value="poubelles">Sortie de poubelles / gestion des bacs</option>
+                        <option value="travaux">Maçonnerie / peinture</option>
+                        <option value="autre">Autre / je ne sais pas</option>
+                      </select>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Votre besoin en quelques mots</Label>
                       <textarea
                         id="message"
                         name="message"
                         rows={5}
-                        placeholder="Décrivez votre projet en quelques mots..."
+                        placeholder="Surface, fréquence, ville, contraintes particulières…"
                         className="w-full rounded-xl border border-input bg-transparent px-3 py-2.5 text-sm leading-relaxed text-foreground transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
                       />
                     </div>
-                    <Button type="submit" size="lg" className="w-full">Envoyer le message</Button>
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full bg-blue-500 text-white hover:bg-blue-600 focus-visible:ring-blue-500/50"
+                    >
+                      Envoyer ma demande
+                    </Button>
                   </form>
                 </CardContent>
               </Card>
@@ -115,7 +141,9 @@ export function ContactContent() {
                     </span>
                     <div>
                       <p className="text-sm font-semibold text-foreground">Téléphone</p>
-                      <a href={`tel:${phone}`} className="text-sm text-muted-foreground hover:text-foreground">{phone}</a>
+                      <a href={`tel:${siteConfig.phoneE164}`} className="text-sm text-muted-foreground hover:text-foreground">
+                        {phone}
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -132,17 +160,39 @@ export function ContactContent() {
                       <MapPin className="size-4" aria-hidden />
                     </span>
                     <div>
-                      <p className="text-sm font-semibold text-foreground">Adresse</p>
-                      <p className="text-sm text-muted-foreground">{street}<br />{postalCode} {city}</p>
+                      <p className="text-sm font-semibold text-foreground">Zone d'intervention</p>
+                      <p className="text-sm text-muted-foreground">
+                        Basé à {city} ({postalCode})<br />
+                        <span className="text-foreground/80">100 km à la ronde</span> — Île-de-France et alentours
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/15">
+                      <Clock className="size-4" aria-hidden />
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">Horaires</p>
+                      <p className="text-sm text-muted-foreground">
+                        Lun – Ven : {siteConfig.hours.weekdays}<br />
+                        Sam : {siteConfig.hours.saturday}
+                      </p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              <div className="overflow-hidden rounded-2xl border border-border/80 bg-muted/30 shadow-[var(--shadow-sm)] ring-1 ring-foreground/5">
-                <div className="flex h-56 items-center justify-center text-sm text-muted-foreground">
-                  <p>Intégrez ici votre carte Google Maps<br /><span className="text-xs">(iframe ou API)</span></p>
-                </div>
+              <div className="overflow-hidden rounded-2xl border border-border/80 shadow-[var(--shadow-sm)] ring-1 ring-foreground/5">
+                <iframe
+                  title="Zone d'intervention de Concept Hygiène"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83817.0!2d2.55!3d48.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5db4bca38a99f%3A0x40b82c3688b3ea0!2sLe%20M%C3%A9e-sur-Seine!5e0!3m2!1sfr!2sfr!4v1700000000000"
+                  width="100%"
+                  height="280"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </motion.div>
           </div>

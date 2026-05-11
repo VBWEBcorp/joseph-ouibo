@@ -7,29 +7,20 @@ import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
 import { useContent } from '@/hooks/use-content'
+import { ctaCol1Images, ctaCol2Images } from '@/lib/images'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
 const defaults = {
-  eyebrow: 'Prêt à démarrer ?',
-  title: 'Parlons de votre projet',
-  description: 'Un échange simple et sans engagement pour comprendre vos besoins et vous proposer la meilleure approche.',
-  button: 'Demander un devis gratuit',
+  eyebrow: 'Devis gratuit · réponse sous 24h',
+  title: 'Un besoin de nettoyage ? On vient voir.',
+  description:
+    "Parlez-nous de votre site, de votre logement ou de votre chantier. On se déplace pour évaluer, et on vous remet un devis clair, sans surprise.",
+  button: 'Demander mon devis',
 }
 
-const col1Images = [
-  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=500&fit=crop&q=75',
-  'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=500&fit=crop&q=75',
-  'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=500&fit=crop&q=75',
-  'https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=400&h=500&fit=crop&q=75',
-]
-
-const col2Images = [
-  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=500&fit=crop&q=75',
-  'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=500&fit=crop&q=75',
-  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=500&fit=crop&q=75',
-  'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&h=500&fit=crop&q=75',
-]
+const col1Images = ctaCol1Images
+const col2Images = ctaCol2Images
 
 function ScrollColumn({ images, direction, speed }: { images: string[]; direction: 'up' | 'down'; speed: number }) {
   // Duplicate once for seamless loop (2 copies, translate -50%)

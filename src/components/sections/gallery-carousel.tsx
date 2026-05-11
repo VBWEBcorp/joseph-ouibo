@@ -7,19 +7,13 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { useContent } from '@/hooks/use-content'
+import { galleryImages } from '@/lib/images'
 
-const defaultImages = [
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=720&q=80',
-]
+const defaultImages = [...galleryImages]
 
 const defaults = {
-  eyebrow: 'Galerie',
-  title: 'En coulisses',
+  eyebrow: 'Réalisations',
+  title: 'Quelques chantiers récents',
   images: defaultImages,
 }
 

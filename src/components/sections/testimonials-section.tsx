@@ -6,22 +6,20 @@ import { SectionTitle } from '@/components/ui/section-title'
 import { useContent } from '@/hooks/use-content'
 
 const defaultTestimonials = [
-  { name: 'Marie D.', company: 'Boulangerie Le Fournil', text: "Depuis le nouveau site, je reçois 3 fois plus d'appels. Les clients nous trouvent enfin sur Google.", stars: 5 },
-  { name: 'Thomas L.', company: 'Cabinet Conseil TLR', text: 'Un travail soigné, un site clair et professionnel. Mes prospects comprennent immédiatement ce que je propose.', stars: 5 },
-  { name: 'Camille B.', company: 'Atelier Camille', text: "Le site reflète parfaitement l'univers de ma marque. J'ai gagné en crédibilité auprès de mes clients.", stars: 5 },
-  { name: 'Laurent M.', company: 'LM Rénovation', text: 'En trois mois, mon chiffre a augmenté de 40 %. Le site et le SEO font vraiment la différence.', stars: 5 },
-  { name: 'Nadia K.', company: 'Agence NovaTour', text: "Un accompagnement au top, des délais respectés et un résultat qui dépasse mes attentes.", stars: 5 },
-  { name: 'Sophie R.', company: 'Studio Pilates Zen', text: "L'équipe a su capter l'ambiance de mon studio. Les réservations ont décollé.", stars: 5 },
-  { name: 'Pierre V.', company: 'Transports Vallée', text: "Un investissement rentabilisé en quelques semaines. Des contacts qualifiés chaque jour.", stars: 5 },
-  { name: 'Julie A.', company: "Les Jardins d'Alice", text: "Ils ont transformé notre présence en ligne. Le site est magnifique et nos ventes ont triplé.", stars: 5 },
-  { name: 'Franck G.', company: 'Studio FG', text: "Design épuré, navigation fluide, exactement ce que je voulais pour présenter mes projets.", stars: 4 },
-  { name: 'Émilie T.', company: 'Clinique Vétérinaire du Parc', text: "Nos clients trouvent toutes les infos facilement. La prise de rendez-vous a changé notre quotidien.", stars: 5 },
+  { name: 'Karim B.', company: 'Conducteur de travaux — Melun', text: "Joseph est passé sur deux de nos chantiers en moins de 48h. Baraques nickel, WC chantier remis comme neufs. On le rappellera.", stars: 5 },
+  { name: 'Sophie L.', company: 'Hôte Airbnb — Fontainebleau', text: "Je gère 4 logements, le ménage entre deux locations était un cauchemar. Concept Hygiène est ponctuel, soigné et discret avec mes voyageurs.", stars: 5 },
+  { name: 'Marc D.', company: 'Particulier — Le Mée-sur-Seine', text: "Après les travaux dans la maison, on n'arrivait pas à enlever les poussières et traces. Joseph a tout remis en état en une journée.", stars: 5 },
+  { name: 'Nadia P.', company: 'Syndic — Évry', text: "On lui a confié la sortie des poubelles et le local des bacs sur deux résidences. Sérieux, jamais en retard, jamais à relancer.", stars: 5 },
+  { name: 'Thomas R.', company: 'Chef de chantier — Corbeil', text: "Avant lui on bricolait avec des intérimaires pour le nettoyage des bungalows. Là on a un seul interlocuteur, un devis clair, un travail propre.", stars: 5 },
+  { name: 'Camille V.', company: 'Conciergerie Airbnb — Paris 12', text: "Très réactif sur les check-out de dernière minute. Et il prend en charge le linge, ce qui nous simplifie énormément la vie.", stars: 5 },
+  { name: 'Olivier M.', company: 'Particulier — Brie-Comte-Robert', text: "Devis sur place, prix tenu, et la salle de bain est ressortie comme à la livraison du logement. Je recommande.", stars: 5 },
+  { name: 'Julie A.', company: 'Architecte d\'intérieur — Sénart', text: "Mes clients me demandent souvent un nettoyage de fin de chantier. Joseph est devenu mon prestataire attitré, je n'ai jamais une plainte.", stars: 5 },
 ]
 
 const defaults = {
-  eyebrow: 'Témoignages',
-  title: 'Ils nous font confiance',
-  description: 'Des entreprises de tous horizons qui ont gagné en visibilité et en crédibilité.',
+  eyebrow: 'Avis clients',
+  title: 'Ce que disent ceux qui ont essayé',
+  description: 'Particuliers, entreprises du BTP et conciergeries Airbnb : ils ont tous une raison de nous rappeler.',
   testimonials: defaultTestimonials,
 }
 

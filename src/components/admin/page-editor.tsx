@@ -168,7 +168,7 @@ export function PageEditor({ pageId, title, defaultContent, children }: PageEdit
             onClick={handleSave}
             disabled={saving}
             size="sm"
-            className={saved ? 'bg-emerald-600 hover:bg-emerald-600' : ''}
+            className={saved ? 'bg-blue-600 hover:bg-blue-600' : ''}
           >
             {saved ? (
               <>

@@ -1,12 +1,13 @@
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Award, Instagram } from 'lucide-react'
 import Link from 'next/link'
 
+import { Logo } from '@/components/layout/logo'
 import { siteConfig } from '@/lib/seo'
 
 const navLinks = [
   { label: 'Accueil', to: '/' },
+  { label: 'Prestations', to: '/services' },
   { label: 'À propos', to: '/a-propos' },
-  { label: 'Services', to: '/services' },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -25,22 +26,27 @@ export function Footer() {
         <div className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-16">
           {/* Brand */}
           <div className="space-y-4">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 font-display text-base font-semibold tracking-tight text-white"
-            >
-              <span className="flex size-7 items-center justify-center rounded-lg bg-white text-zinc-950">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-3.5">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                  <path d="M2 12h20" />
-                </svg>
-              </span>
-              {siteConfig.name}
-            </Link>
+            <Logo variant="inverted" />
             <p className="max-w-sm text-sm leading-relaxed text-zinc-400">
-              {siteConfig.description}
+              Entreprise de nettoyage qualifiée Qualibat 2018. Bâtiments, chantiers BTP, locations Airbnb et copropriétés à 100 km autour de Mée-sur-Seine.
             </p>
+            <div className="flex items-center gap-3 pt-1">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-2.5 py-1 text-[11px] font-semibold text-blue-300">
+                <Award className="size-3" aria-hidden />
+                Qualibat 2018
+              </span>
+              {siteConfig.socials.instagram && (
+                <a
+                  href={siteConfig.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="inline-flex size-8 items-center justify-center rounded-full border border-white/15 text-zinc-300 transition-colors hover:bg-white/10 hover:text-white"
+                >
+                  <Instagram className="size-4" />
+                </a>
+              )}
+            </div>
           </div>
 
           {/* Navigation */}
@@ -95,6 +101,14 @@ export function Footer() {
             <ul className="mt-5 space-y-3 text-sm">
               <li>
                 <a
+                  href={`tel:${siteConfig.phoneE164}`}
+                  className="font-semibold text-white transition-colors hover:text-blue-300"
+                >
+                  {siteConfig.phone}
+                </a>
+              </li>
+              <li>
+                <a
                   href={`mailto:${siteConfig.email}`}
                   className="group inline-flex items-center gap-1 text-zinc-300 transition-colors hover:text-white"
                 >
@@ -102,18 +116,10 @@ export function Footer() {
                   <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </a>
               </li>
-              <li>
-                <a
-                  href={`tel:${siteConfig.phone}`}
-                  className="text-zinc-300 transition-colors hover:text-white"
-                >
-                  {siteConfig.phone}
-                </a>
-              </li>
               <li className="text-zinc-500">
-                {siteConfig.address.street}
+                {siteConfig.address.city}
                 <br />
-                {siteConfig.address.postalCode} {siteConfig.address.city}
+                {siteConfig.address.postalCode} — {siteConfig.address.region}
               </li>
             </ul>
           </div>
@@ -125,7 +131,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col items-start justify-between gap-3 py-6 sm:flex-row sm:items-center">
           <p className="text-xs text-zinc-500">
-            © {new Date().getFullYear()} {siteConfig.name}
+            © {new Date().getFullYear()} {siteConfig.name} — SIRET à compléter
           </p>
           <p className="text-xs text-zinc-500">
             Tous droits réservés
