@@ -1,51 +1,61 @@
 /**
- * Banque d'images réelles fournies par le client (Concept Hygiène).
+ * Banque d'images réelles fournies par le client.
  * Hébergées sur i.ibb.co (autorisé dans next.config.ts).
  */
 
-export const brandLogo = 'https://i.ibb.co/Jwq85f0T/Logo-Concept-Hygiene-e1743478166664.webp'
+// Nouveau logo BlitzClean 77 (marges rognées, servi en local)
+export const brandLogo = '/blitzclean-logo.png'
+
+// Nouvelles photos de réalisation (agence de voyage nettoyée) — remplacent la voiture + la photo machine
+const NEW1 = 'https://i.ibb.co/rGXkM9xD/07e063d9-02fd-4dd4-b8c2-bf207fcd896a-1-all-5907.jpg'
+const NEW2 = 'https://i.ibb.co/gLCGV5MX/07e063d9-02fd-4dd4-b8c2-bf207fcd896a-1-all-5909.jpg'
+const NEW3 = 'https://i.ibb.co/ccZg777r/07e063d9-02fd-4dd4-b8c2-bf207fcd896a-1-all-5901.jpg'
 
 export const heroImages = [
+  NEW2,
+  NEW1,
   'https://i.ibb.co/RkYYFCc4/Concept-Hygiene-Nettoyage-Pro.webp',
-  'https://i.ibb.co/MyhSN0Dd/Concept-Hygiene-Nettoyage-exterieur.webp',
-  'https://i.ibb.co/8nqwcx6H/Concept-Hygiene-Nettoyage-bureaux.webp',
 ] as const
 
 export const galleryImages = [
-  'https://i.ibb.co/mrj4gDN5/Whats-App-Image-2025-07-23-at-14-02-40-1.avif',
+  // Bureaux & commerces
+  NEW1,
+  NEW2,
+  NEW3,
+  'https://i.ibb.co/wh6tfrtk/Concept-Hygiene-Nettoyage-bureau.webp',
+  // Résidentiel / Airbnb
   'https://i.ibb.co/sSZLQh6/Whats-App-Image-2025-07-23-at-14-02-41.avif',
   'https://i.ibb.co/ksYYPLZ6/Whats-App-Image-2025-07-23-at-14-02-40-4.avif',
-  'https://i.ibb.co/WNmn6L7t/Whats-App-Image-2025-07-23-at-14-02-40-3.avif',
   'https://i.ibb.co/PZhhQQ4x/Whats-App-Image-2025-07-23-at-14-02-40-2.avif',
-  'https://i.ibb.co/wh6tfrtk/Concept-Hygiene-Nettoyage-bureau.webp',
+  'https://i.ibb.co/WNmn6L7t/Whats-App-Image-2025-07-23-at-14-02-40-3.avif',
 ] as const
 
-export const storyImage = 'https://i.ibb.co/hR0rMFZq/Concept-Hygiene-Nettoyage-professionnel.webp'
+export const storyImage = NEW2
 
 export const aboutImages = [
+  NEW2,
+  NEW1,
   'https://i.ibb.co/RkYYFCc4/Concept-Hygiene-Nettoyage-Pro.webp',
-  'https://i.ibb.co/MyhSN0Dd/Concept-Hygiene-Nettoyage-exterieur.webp',
-  'https://i.ibb.co/8nqwcx6H/Concept-Hygiene-Nettoyage-bureaux.webp',
   'https://i.ibb.co/hR0rMFZq/Concept-Hygiene-Nettoyage-professionnel.webp',
 ] as const
 
 export const ctaCol1Images = [
-  'https://i.ibb.co/mrj4gDN5/Whats-App-Image-2025-07-23-at-14-02-40-1.avif',
+  NEW1,
   'https://i.ibb.co/ksYYPLZ6/Whats-App-Image-2025-07-23-at-14-02-40-4.avif',
   'https://i.ibb.co/PZhhQQ4x/Whats-App-Image-2025-07-23-at-14-02-40-2.avif',
   'https://i.ibb.co/wh6tfrtk/Concept-Hygiene-Nettoyage-bureau.webp',
 ]
 
 export const ctaCol2Images = [
+  NEW3,
   'https://i.ibb.co/sSZLQh6/Whats-App-Image-2025-07-23-at-14-02-41.avif',
   'https://i.ibb.co/WNmn6L7t/Whats-App-Image-2025-07-23-at-14-02-40-3.avif',
   'https://i.ibb.co/RkYYFCc4/Concept-Hygiene-Nettoyage-Pro.webp',
-  'https://i.ibb.co/MyhSN0Dd/Concept-Hygiene-Nettoyage-exterieur.webp',
 ]
 
 export const pageHeroImages = {
   services: 'https://i.ibb.co/RkYYFCc4/Concept-Hygiene-Nettoyage-Pro.webp',
-  about: 'https://i.ibb.co/hR0rMFZq/Concept-Hygiene-Nettoyage-professionnel.webp',
+  about: NEW2,
   contact: 'https://i.ibb.co/8nqwcx6H/Concept-Hygiene-Nettoyage-bureaux.webp',
-  gallery: 'https://i.ibb.co/MyhSN0Dd/Concept-Hygiene-Nettoyage-exterieur.webp',
+  gallery: NEW1,
 } as const

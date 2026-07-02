@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 
+import { AudienceSplit } from '@/components/sections/audience-split'
 import { CtaSection } from '@/components/sections/cta-section'
 import { GalleryCarousel } from '@/components/sections/gallery-carousel'
 import { HeroSection } from '@/components/sections/hero-section'
@@ -41,6 +42,7 @@ export default function HomePage() {
       />
       <HeroSection />
       <TrustSection />
+      <AudienceSplit />
       <ServicesPreview />
       <ProcessSection />
       <SatisfactionBanner />

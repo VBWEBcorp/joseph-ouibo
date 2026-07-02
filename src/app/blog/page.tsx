@@ -62,7 +62,18 @@ export default async function BlogPage() {
         .lean(),
     ])
 
-    if (settingsDoc) settings = settingsDoc
+    if (settingsDoc) {
+      // On ne passe que des champs simples au composant client
+      // (pas l'ObjectId _id, ni les dates/__v de Mongoose).
+      settings = {
+        enabled: settingsDoc.enabled ?? defaultSettings.enabled,
+        title: settingsDoc.title ?? defaultSettings.title,
+        description: settingsDoc.description ?? defaultSettings.description,
+        eyebrow: settingsDoc.eyebrow ?? defaultSettings.eyebrow,
+        heroImage: settingsDoc.heroImage ?? defaultSettings.heroImage,
+        categories: settingsDoc.categories ?? defaultSettings.categories,
+      }
+    }
     posts = (postsDocs as any[]).map((p) => ({
       ...p,
       _id: String(p._id),

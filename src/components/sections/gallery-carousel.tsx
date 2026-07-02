@@ -13,7 +13,7 @@ const defaultImages = [...galleryImages]
 
 const defaults = {
   eyebrow: 'Réalisations',
-  title: 'Quelques chantiers récents',
+  title: 'Nos dernières réalisations',
   images: defaultImages,
 }
 

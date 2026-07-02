@@ -12,7 +12,7 @@ const defaultPopup = {
   imageUrl: '',
   bgColor: '#ffffff',
   textColor: '#111827',
-  buttonColor: '#2563eb',
+  buttonColor: '#059669',
   delay: 5,
   banner: {
     enabled: false,

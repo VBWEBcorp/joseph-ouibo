@@ -68,7 +68,7 @@ export default function AdminLoginPage() {
       {/* Decorative ambient glow */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -top-32 -left-32 size-[480px] rounded-full bg-primary/20 blur-[140px]" />
-        <div className="absolute -bottom-40 -right-20 size-[420px] rounded-full bg-sky-400/15 blur-[140px]" />
+        <div className="absolute -bottom-40 -right-20 size-[420px] rounded-full bg-emerald-400/15 blur-[140px]" />
       </div>
 
       <div className="flex min-h-screen flex-col">

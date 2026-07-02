@@ -54,7 +54,7 @@ const MarketingPopupSchema = new Schema<IMarketingPopup>(
     },
     buttonColor: {
       type: String,
-      default: '#2563eb',
+      default: '#059669',
     },
     delay: {
       type: Number,

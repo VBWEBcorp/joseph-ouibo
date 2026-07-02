@@ -31,7 +31,7 @@ export function Footer() {
               Entreprise de nettoyage qualifiée Qualibat 2018. Bâtiments, chantiers BTP, locations Airbnb et copropriétés à 100 km autour de Mée-sur-Seine.
             </p>
             <div className="flex items-center gap-3 pt-1">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-2.5 py-1 text-[11px] font-semibold text-blue-300">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-300">
                 <Award className="size-3" aria-hidden />
                 Qualibat 2018
               </span>
@@ -102,7 +102,7 @@ export function Footer() {
               <li>
                 <a
                   href={`tel:${siteConfig.phoneE164}`}
-                  className="font-semibold text-white transition-colors hover:text-blue-300"
+                  className="font-semibold text-white transition-colors hover:text-emerald-300"
                 >
                   {siteConfig.phone}
                 </a>

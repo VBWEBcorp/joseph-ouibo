@@ -48,7 +48,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
         {/* Logo (gauche) */}
-        <Logo showText={false} imageSize="lg" />
+        <Logo showText={false} imageSize="xl" />
 
         {/* Navigation (centre/droite) */}
         <nav
@@ -96,7 +96,7 @@ export function Navbar() {
 
           <Button
             size="default"
-            className="hidden whitespace-nowrap bg-blue-500 text-white shadow-sm shadow-blue-500/20 hover:bg-blue-600 focus-visible:ring-blue-500/50 sm:inline-flex"
+            className="hidden whitespace-nowrap bg-emerald-500 text-white shadow-sm shadow-emerald-500/20 hover:bg-emerald-600 focus-visible:ring-emerald-500/50 sm:inline-flex"
             asChild
           >
             <Link href="/contact">Devis gratuit</Link>
@@ -162,7 +162,7 @@ export function Navbar() {
                   {siteConfig.phone}
                 </a>
                 <Button
-                  className="flex-1 bg-blue-500 text-white hover:bg-blue-600"
+                  className="flex-1 bg-emerald-500 text-white hover:bg-emerald-600"
                   asChild
                 >
                   <Link href="/contact" onClick={() => setOpen(false)}>

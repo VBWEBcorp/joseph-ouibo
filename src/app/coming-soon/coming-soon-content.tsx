@@ -46,7 +46,7 @@ function ComingSoonInner() {
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
             size="lg"
-            className="group bg-blue-500 text-white hover:bg-blue-600 focus-visible:ring-blue-500/50"
+            className="group bg-emerald-500 text-white hover:bg-emerald-600 focus-visible:ring-emerald-500/50"
             asChild
           >
             <Link href="/contact">

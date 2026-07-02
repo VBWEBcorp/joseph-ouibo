@@ -12,6 +12,9 @@ type LogoProps = {
   imageSize?: 'sm' | 'md' | 'lg' | 'xl'
 }
 
+// Ratio réel du logo BlitzClean (largeur / hauteur) une fois les marges rognées.
+const LOGO_RATIO = 1000 / 882
+
 const imageSizeMap = {
   sm: { class: 'h-8 w-auto sm:h-9', px: 36 },
   md: { class: 'h-10 w-auto sm:h-11', px: 44 },
@@ -54,7 +57,7 @@ export function Logo({
         <Image
           src={brandLogo}
           alt={`Logo ${siteConfig.name}`}
-          width={sizes.px}
+          width={Math.round(sizes.px * LOGO_RATIO)}
           height={sizes.px}
           priority
           className={cn(

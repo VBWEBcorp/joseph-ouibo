@@ -18,9 +18,9 @@ const INTERVAL = 6000
 
 const defaults = {
   eyebrow: 'Entreprise de nettoyage · 77 & alentours',
-  title: 'Un nettoyage pro, du chantier au logement',
+  title: 'Quel est votre budget ?',
   description:
-    'Baraques de chantier, containers WC, locations Airbnb, maisons et sortie de poubelles. Intervention rapide à 100 km autour de Mée-sur-Seine.',
+    'On construit ensemble un plan de nettoyage 100 % adapté à votre besoin.',
   button1: 'Demander un devis gratuit',
   button2: 'Voir nos prestations',
   images: [...heroImages],
@@ -69,7 +69,7 @@ export function HeroSection() {
           </motion.div>
         </AnimatePresence>
         {/* Voile global */}
-        <div className="absolute inset-0 bg-[oklch(0.18_0.05_260/0.72)]" />
+        <div className="absolute inset-0 bg-[oklch(0.20_0.06_160/0.72)]" />
         {/* Renfort gauche pour la lisibilité du texte */}
         <div className="absolute inset-y-0 left-0 right-0 bg-gradient-to-r from-black/55 via-black/30 to-black/10 lg:right-1/3" />
         {/* Léger gradient bas */}
@@ -86,7 +86,7 @@ export function HeroSection() {
             className="text-white"
           >
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-300/30 bg-blue-500/20 px-2.5 py-0.5 font-display text-[10px] font-semibold uppercase tracking-[0.18em] text-blue-200 backdrop-blur-sm">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-300/30 bg-emerald-500/20 px-2.5 py-0.5 font-display text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-200 backdrop-blur-sm">
                 <Award className="size-3" aria-hidden />
                 Qualibat 2018
               </span>
@@ -110,7 +110,7 @@ export function HeroSection() {
                   key={b}
                   className="flex items-start gap-2 text-sm text-white/85"
                 >
-                  <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-blue-500/95 text-white">
+                  <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-emerald-500/95 text-white">
                     <Check className="size-2.5" strokeWidth={3} aria-hidden />
                   </span>
                   <span>{b}</span>
@@ -120,7 +120,7 @@ export function HeroSection() {
 
             <div className="mt-7 flex flex-col gap-2.5 sm:flex-row">
               <Button
-                className="group h-11 bg-blue-500 text-white shadow-lg shadow-blue-500/25 hover:bg-blue-600 focus-visible:ring-blue-500/50"
+                className="group h-11 bg-emerald-500 text-white shadow-lg shadow-emerald-500/25 hover:bg-emerald-600 focus-visible:ring-emerald-500/50"
                 asChild
               >
                 <Link href="/contact">
@@ -151,7 +151,7 @@ export function HeroSection() {
             <div className="relative overflow-hidden rounded-2xl border border-white/20 bg-white p-5 shadow-[0_30px_70px_-20px_rgba(15,23,42,0.45)] ring-1 ring-foreground/5 sm:p-6 dark:bg-zinc-900">
               {/* Header carte */}
               <div className="flex items-start gap-3">
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-blue-500/15 text-blue-600 ring-1 ring-blue-500/20 dark:text-blue-400">
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-600 ring-1 ring-emerald-500/20 dark:text-emerald-400">
                   <Sparkles className="size-4" aria-hidden />
                 </span>
                 <div>
@@ -235,7 +235,7 @@ export function HeroSection() {
 
                 <Button
                   type="submit"
-                  className="group mt-1 h-11 w-full bg-blue-500 text-white shadow-md shadow-blue-500/25 hover:bg-blue-600 focus-visible:ring-blue-500/50"
+                  className="group mt-1 h-11 w-full bg-emerald-500 text-white shadow-md shadow-emerald-500/25 hover:bg-emerald-600 focus-visible:ring-emerald-500/50"
                 >
                   Recevoir mon devis
                   <ArrowRight className="transition-transform group-hover:translate-x-0.5" />

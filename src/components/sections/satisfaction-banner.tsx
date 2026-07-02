@@ -22,7 +22,7 @@ function PromisesTrack() {
           key={`${p}-${i}`}
           className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap font-display text-[12px] font-medium uppercase tracking-[0.18em] text-foreground/55"
         >
-          <Check className="size-3.5 text-blue-500" aria-hidden strokeWidth={3} />
+          <Check className="size-3.5 text-emerald-500" aria-hidden strokeWidth={3} />
           {p}
         </span>
       ))}

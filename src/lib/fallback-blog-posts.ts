@@ -81,7 +81,7 @@ export const fallbackBlogPosts: FallbackPost[] = [
     slug: 'lavage-facade-haute-pression-ou-doux',
     excerpt:
       "Toutes les façades ne supportent pas la haute pression. Voici comment choisir la bonne méthode selon votre support et éviter les mauvaises surprises.",
-    coverImage: 'https://i.ibb.co/MyhSN0Dd/Concept-Hygiene-Nettoyage-exterieur.webp',
+    coverImage: 'https://i.ibb.co/ccZg777r/07e063d9-02fd-4dd4-b8c2-bf207fcd896a-1-all-5901.jpg',
     category: 'Lavage extérieur',
     tags: ['façade', 'haute pression', 'démoussage'],
     author: 'Joseph — Concept Hygiène',

@@ -34,7 +34,7 @@ const items = [
 const carouselImages = [
   ...galleryImages,
   'https://i.ibb.co/RkYYFCc4/Concept-Hygiene-Nettoyage-Pro.webp',
-  'https://i.ibb.co/MyhSN0Dd/Concept-Hygiene-Nettoyage-exterieur.webp',
+  'https://i.ibb.co/rGXkM9xD/07e063d9-02fd-4dd4-b8c2-bf207fcd896a-1-all-5907.jpg',
   'https://i.ibb.co/8nqwcx6H/Concept-Hygiene-Nettoyage-bureaux.webp',
   'https://i.ibb.co/hR0rMFZq/Concept-Hygiene-Nettoyage-professionnel.webp',
 ]

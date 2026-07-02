@@ -7,7 +7,7 @@ export const siteConfig = {
     'Nettoyage de baraques de chantier, containers WC, locations Airbnb, maisons et sortie de poubelles. Intervention rapide à 100 km autour de Mée-sur-Seine (77).',
   ogImage: 'https://www.concepthygiene.fr/og.png',
   twitterHandle: '@concepthygiene',
-  themeColor: '#1c2f5a',
+  themeColor: '#059669',
   phone: '07 61 05 57 39',
   phoneE164: '+33761055739',
   email: 'contact@concepthygiene.fr',

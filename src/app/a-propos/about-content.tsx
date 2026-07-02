@@ -61,7 +61,7 @@ function ValuesTimeline({ values }: { values: any[] }) {
       <motion.div
         aria-hidden
         style={{ height: lineHeight }}
-        className="absolute left-4 top-0 w-px bg-gradient-to-b from-primary via-primary to-sky-500 md:left-1/2 md:-translate-x-1/2"
+        className="absolute left-4 top-0 w-px bg-gradient-to-b from-primary via-primary to-emerald-500 md:left-1/2 md:-translate-x-1/2"
       />
 
       <ul className="space-y-12 md:space-y-16">
