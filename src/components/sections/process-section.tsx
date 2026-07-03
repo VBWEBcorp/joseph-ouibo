@@ -90,7 +90,7 @@ export function ProcessSection() {
         <div className="mt-12 text-center">
           <Button
             size="lg"
-            className="group bg-emerald-500 text-white hover:bg-emerald-600 focus-visible:ring-emerald-500/50"
+            className="group bg-primary text-white hover:bg-primary/90 focus-visible:ring-primary/40"
             asChild
           >
             <Link href="/contact">

@@ -36,7 +36,7 @@ export function StorySection() {
             transition={{ duration: 0.6, ease }}
             className="max-w-xl"
           >
-            <span className="inline-block font-display text-[11px] font-semibold tracking-[0.2em] text-muted-foreground uppercase">
+            <span className="inline-block font-display text-[11px] font-semibold tracking-[0.2em] text-primary uppercase">
               {story.eyebrow}
             </span>
 

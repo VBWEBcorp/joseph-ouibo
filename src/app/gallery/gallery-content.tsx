@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
+import { PageHero } from '@/components/sections/page-hero'
+
 interface GalleryImage {
   _id: string
   title: string
@@ -42,44 +44,20 @@ export default function GalleryContent({ initialSettings, initialImages }: Props
 
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="relative overflow-hidden min-h-[340px] sm:min-h-[400px] lg:min-h-[440px] flex items-center">
-        <div className="absolute inset-0">
-          {settings.heroImage ? (
-            <Image
-              src={settings.heroImage}
-              alt=""
-              fill
-              sizes="100vw"
-              priority
-              className="object-cover"
-            />
-          ) : (
-            <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-background" />
-          )}
-        </div>
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-
-        <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <p className="font-display text-xs font-semibold tracking-[0.22em] text-white/70 uppercase mb-4">
-              {settings.eyebrow || 'Galerie'}
-            </p>
-            <h1 className="font-display text-4xl tracking-tight text-white sm:text-5xl lg:text-6xl font-bold">
-              {settings.title || 'Nos réalisations'}
-            </h1>
-            <p className="mt-5 text-lg text-white/70 leading-relaxed sm:text-xl max-w-2xl mx-auto">
-              {settings.description || 'Découvrez nos projets récents et laissez-vous inspirer par notre savoir-faire.'}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero (style éditorial unifié) */}
+      <PageHero
+        eyebrow={settings.eyebrow || 'Réalisations'}
+        title={settings.title || 'Nos réalisations'}
+        description={
+          settings.description ||
+          'Découvrez nos projets récents et laissez-vous inspirer par notre savoir-faire.'
+        }
+        image={
+          settings.heroImage ||
+          'https://i.ibb.co/rGXkM9xD/07e063d9-02fd-4dd4-b8c2-bf207fcd896a-1-all-5907.jpg'
+        }
+        breadcrumb="Réalisations"
+      />
 
       {/* Gallery Grid */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">

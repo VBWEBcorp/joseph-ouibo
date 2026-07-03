@@ -120,7 +120,7 @@ export function HeroSection() {
 
             <div className="mt-7 flex flex-col gap-2.5 sm:flex-row">
               <Button
-                className="group h-11 bg-emerald-500 text-white shadow-lg shadow-emerald-500/25 hover:bg-emerald-600 focus-visible:ring-emerald-500/50"
+                className="group h-11 bg-primary text-white shadow-lg shadow-primary/25 hover:bg-primary/90 focus-visible:ring-primary/40"
                 asChild
               >
                 <Link href="/contact">
@@ -151,7 +151,7 @@ export function HeroSection() {
             <div className="relative overflow-hidden rounded-2xl border border-white/20 bg-white p-5 shadow-[0_30px_70px_-20px_rgba(15,23,42,0.45)] ring-1 ring-foreground/5 sm:p-6 dark:bg-zinc-900">
               {/* Header carte */}
               <div className="flex items-start gap-3">
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-600 ring-1 ring-emerald-500/20 dark:text-emerald-400">
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/15 text-primary ring-1 ring-emerald-500/20 dark:text-emerald-400">
                   <Sparkles className="size-4" aria-hidden />
                 </span>
                 <div>
@@ -235,7 +235,7 @@ export function HeroSection() {
 
                 <Button
                   type="submit"
-                  className="group mt-1 h-11 w-full bg-emerald-500 text-white shadow-md shadow-emerald-500/25 hover:bg-emerald-600 focus-visible:ring-emerald-500/50"
+                  className="group mt-1 h-11 w-full bg-primary text-white shadow-md shadow-primary/25 hover:bg-primary/90 focus-visible:ring-primary/40"
                 >
                   Recevoir mon devis
                   <ArrowRight className="transition-transform group-hover:translate-x-0.5" />

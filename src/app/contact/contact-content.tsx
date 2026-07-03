@@ -117,7 +117,7 @@ export function ContactContent() {
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-emerald-500 text-white hover:bg-emerald-600 focus-visible:ring-emerald-500/50"
+                      className="w-full bg-primary text-white hover:bg-primary/90 focus-visible:ring-primary/40"
                     >
                       Envoyer ma demande
                     </Button>

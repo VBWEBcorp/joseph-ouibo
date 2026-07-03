@@ -56,6 +56,6 @@ export const ctaCol2Images = [
 export const pageHeroImages = {
   services: 'https://i.ibb.co/RkYYFCc4/Concept-Hygiene-Nettoyage-Pro.webp',
   about: NEW2,
-  contact: 'https://i.ibb.co/8nqwcx6H/Concept-Hygiene-Nettoyage-bureaux.webp',
+  contact: NEW3,
   gallery: NEW1,
 } as const

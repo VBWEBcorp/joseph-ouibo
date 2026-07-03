@@ -6,6 +6,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Calendar, User, Search } from 'lucide-react'
 
+import { PageHero } from '@/components/sections/page-hero'
+
 interface BlogPost {
   _id: string
   title: string
@@ -60,45 +62,20 @@ export default function BlogPageContent({ initialSettings, initialPosts }: Props
 
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="relative overflow-hidden min-h-[340px] sm:min-h-[400px] lg:min-h-[440px] flex items-center">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          {settings.heroImage ? (
-            <Image
-              src={settings.heroImage}
-              alt=""
-              fill
-              sizes="100vw"
-              priority
-              className="object-cover"
-            />
-          ) : (
-            <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-background" />
-          )}
-        </div>
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-
-        <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <p className="font-display text-xs font-semibold tracking-[0.22em] text-white/70 uppercase mb-4">
-              {settings.eyebrow || 'Blog'}
-            </p>
-            <h1 className="font-display text-4xl tracking-tight text-white sm:text-5xl lg:text-6xl font-bold">
-              {settings.title || 'Nos dernières actualités'}
-            </h1>
-            <p className="mt-5 text-lg text-white/70 leading-relaxed sm:text-xl max-w-2xl mx-auto">
-              {settings.description || 'Retrouvez nos conseils, nos projets récents et les tendances du secteur.'}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero (style éditorial unifié) */}
+      <PageHero
+        eyebrow={settings.eyebrow || 'Conseils'}
+        title={settings.title || 'Nos dernières actualités'}
+        description={
+          settings.description ||
+          'Retrouvez nos conseils, nos projets récents et les tendances du secteur.'
+        }
+        image={
+          settings.heroImage ||
+          'https://i.ibb.co/hR0rMFZq/Concept-Hygiene-Nettoyage-professionnel.webp'
+        }
+        breadcrumb="Conseils"
+      />
 
       {/* Category filters */}
       {(settings.categories?.length ?? 0) > 0 && (

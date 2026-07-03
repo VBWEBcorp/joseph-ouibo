@@ -96,7 +96,7 @@ export function Navbar() {
 
           <Button
             size="default"
-            className="hidden whitespace-nowrap bg-emerald-500 text-white shadow-sm shadow-emerald-500/20 hover:bg-emerald-600 focus-visible:ring-emerald-500/50 sm:inline-flex"
+            className="hidden whitespace-nowrap bg-primary text-white shadow-sm shadow-primary/20 hover:bg-primary/90 focus-visible:ring-primary/40 sm:inline-flex"
             asChild
           >
             <Link href="/contact">Devis gratuit</Link>
@@ -162,7 +162,7 @@ export function Navbar() {
                   {siteConfig.phone}
                 </a>
                 <Button
-                  className="flex-1 bg-emerald-500 text-white hover:bg-emerald-600"
+                  className="flex-1 bg-primary text-white hover:bg-primary/90"
                   asChild
                 >
                   <Link href="/contact" onClick={() => setOpen(false)}>

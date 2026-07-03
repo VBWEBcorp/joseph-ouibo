@@ -7,7 +7,9 @@ import { siteConfig } from '@/lib/seo'
 const navLinks = [
   { label: 'Accueil', to: '/' },
   { label: 'Prestations', to: '/services' },
+  { label: 'Réalisations', to: '/gallery' },
   { label: 'À propos', to: '/a-propos' },
+  { label: 'Conseils', to: '/blog' },
   { label: 'Contact', to: '/contact' },
 ]
 

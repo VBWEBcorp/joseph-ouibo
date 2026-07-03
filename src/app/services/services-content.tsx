@@ -136,7 +136,7 @@ export function ServicesContent() {
                               className="flex items-start gap-2 text-[13px] leading-relaxed text-muted-foreground"
                             >
                               <span
-                                className="mt-1.5 size-1.5 shrink-0 rounded-full bg-emerald-500"
+                                className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary"
                                 aria-hidden
                               />
                               <span>{b}</span>

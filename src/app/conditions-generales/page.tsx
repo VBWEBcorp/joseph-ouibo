@@ -42,7 +42,7 @@ export default function CGUPage() {
             Conditions générales d&apos;utilisation
           </h1>
           <p className="mt-4 text-sm text-muted-foreground">
-            Dernière mise à jour : [JJ/MM/AAAA]
+            Dernière mise à jour : 3 juillet 2026
           </p>
 
           <article className="mt-10 space-y-10 text-sm leading-relaxed text-muted-foreground [&_h2]:font-display [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-foreground [&_h3]:text-sm [&_h3]:font-semibold [&_h3]:text-foreground">

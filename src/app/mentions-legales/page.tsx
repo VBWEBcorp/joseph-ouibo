@@ -42,7 +42,7 @@ export default function LegalPage() {
             Mentions légales
           </h1>
           <p className="mt-4 text-sm text-muted-foreground">
-            Dernière mise à jour : [JJ/MM/AAAA]
+            Dernière mise à jour : 3 juillet 2026
           </p>
           <div className="mt-6 rounded-xl border border-amber-300/40 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-500/30 dark:bg-amber-500/10 dark:text-amber-200">
             <strong>Maquette :</strong> les champs entre crochets <code>[…]</code> sont à compléter par Concept Hygiène avant la mise en ligne (SIRET, forme juridique, hébergeur, etc.).

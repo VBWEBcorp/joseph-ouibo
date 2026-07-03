@@ -242,7 +242,7 @@ export default function BlogPostContent({
           font-style: italic;
         }
         .blog-content a {
-          color: hsl(var(--primary));
+          color: var(--primary);
           text-decoration: underline;
           text-underline-offset: 4px;
         }
@@ -260,7 +260,7 @@ export default function BlogPostContent({
           margin-bottom: 0.4rem;
         }
         .blog-content blockquote {
-          border-left: 3px solid hsl(var(--primary));
+          border-left: 3px solid var(--primary);
           padding: 0.75rem 1.25rem;
           margin: 1.5rem 0;
           font-style: italic;
