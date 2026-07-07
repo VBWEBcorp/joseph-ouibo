@@ -69,7 +69,7 @@ const defaultSettings = {
   enabled: true,
   title: 'Nos réalisations',
   description:
-    'Nos réalisations récentes, particuliers comme professionnels, dans toute l\'Île-de-France. Photos prises directement sur le terrain par Concept Hygiène.',
+    'Nos réalisations récentes, particuliers comme professionnels, dans toute l\'Île-de-France. Photos prises directement sur le terrain par BlitzClean.',
   eyebrow: 'Réalisations',
   heroImage: pageHeroImages.gallery,
 }

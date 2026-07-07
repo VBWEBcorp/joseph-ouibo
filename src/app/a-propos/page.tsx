@@ -4,7 +4,7 @@ import { AboutContent } from './about-content'
 import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 
 const description =
-  "Découvrez Concept Hygiène : entreprise de nettoyage qualifiée Qualibat 2018, basée au Mée-sur-Seine (77). Bâtiments, chantiers BTP, Airbnb et copropriétés."
+  "Découvrez BlitzClean : entreprise de nettoyage qualifiée Qualibat 2018, basée au Mée-sur-Seine (77). Bâtiments, chantiers BTP, Airbnb et copropriétés."
 
 export const metadata: Metadata = {
   title: 'À propos',

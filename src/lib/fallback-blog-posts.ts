@@ -3,7 +3,7 @@
  * MongoDB n'est pas connectée. Permet de présenter au client
  * un aperçu fonctionnel de la rubrique conseils.
  *
- * Tous les visuels sont les vraies photos Concept Hygiène.
+ * Tous les visuels sont les vraies photos BlitzClean.
  */
 
 export type FallbackPost = {
@@ -30,7 +30,7 @@ export const fallbackBlogPosts: FallbackPost[] = [
     coverImage: 'https://i.ibb.co/RkYYFCc4/Concept-Hygiene-Nettoyage-Pro.webp',
     category: 'Chantier',
     tags: ['fin de chantier', 'BTP', 'remise en état'],
-    author: 'Joseph — Concept Hygiène',
+    author: 'Joseph — BlitzClean',
     publishedAt: '2026-04-12T09:00:00.000Z',
     metaDescription:
       "Les 5 erreurs à éviter pour réussir un nettoyage de fin de chantier : poussières fines, traces de plâtre, joints, vitrerie. Conseils d'un pro à 100 km de Mée-sur-Seine.",
@@ -46,7 +46,7 @@ export const fallbackBlogPosts: FallbackPost[] = [
       <p>Tous les supports n'aiment pas les mêmes produits. Le parquet stratifié déteste l'eau, l'inox marque avec l'acide, le marbre se détériore au vinaigre. Mieux vaut faire appel à un professionnel équipé.</p>
       <h2>5. Ne pas prévoir de seconde passe</h2>
       <p>La poussière retombe toujours dans les heures qui suivent. Une seconde passe la veille de la livraison fait toute la différence sur le rendu final.</p>
-      <p><em>Concept Hygiène intervient sur tous types de chantiers à 100 km autour de Mée-sur-Seine. Contactez-nous pour un devis gratuit.</em></p>
+      <p><em>BlitzClean intervient sur tous types de chantiers à 100 km autour de Mée-sur-Seine. Contactez-nous pour un devis gratuit.</em></p>
     `,
   },
   {
@@ -58,7 +58,7 @@ export const fallbackBlogPosts: FallbackPost[] = [
     coverImage: 'https://i.ibb.co/sSZLQh6/Whats-App-Image-2025-07-23-at-14-02-41.avif',
     category: 'Airbnb',
     tags: ['airbnb', 'conciergerie', 'location courte durée'],
-    author: 'Joseph — Concept Hygiène',
+    author: 'Joseph — BlitzClean',
     publishedAt: '2026-04-04T09:00:00.000Z',
     metaDescription:
       "Méthode complète pour le ménage entre deux locations Airbnb : ordre des tâches, gestion du linge, vérification de l'inventaire, photos avant/après.",
@@ -72,7 +72,7 @@ export const fallbackBlogPosts: FallbackPost[] = [
       <p>Vaisselle, linge, télécommandes, accessoires : on coche une liste à chaque passage. Toute disparition est signalée à l'hôte avec une photo.</p>
       <h2>Photos avant / après</h2>
       <p>Pour se protéger en cas de litige avec un voyageur, on prend toujours quelques photos une fois le logement remis en état.</p>
-      <p><em>Concept Hygiène travaille avec plusieurs hôtes et conciergeries dans le 77, le 91 et le 75. Devis sur demande.</em></p>
+      <p><em>BlitzClean travaille avec plusieurs hôtes et conciergeries dans le 77, le 91 et le 75. Devis sur demande.</em></p>
     `,
   },
   {
@@ -84,7 +84,7 @@ export const fallbackBlogPosts: FallbackPost[] = [
     coverImage: 'https://i.ibb.co/ccZg777r/07e063d9-02fd-4dd4-b8c2-bf207fcd896a-1-all-5901.jpg',
     category: 'Lavage extérieur',
     tags: ['façade', 'haute pression', 'démoussage'],
-    author: 'Joseph — Concept Hygiène',
+    author: 'Joseph — BlitzClean',
     publishedAt: '2026-03-22T09:00:00.000Z',
     metaDescription:
       "Lavage de façade : quand utiliser la haute pression et quand préférer un nettoyage doux ? Conseils selon le support (crépi, pierre, brique, enduit).",
@@ -96,7 +96,7 @@ export const fallbackBlogPosts: FallbackPost[] = [
       <p>Pulvérisation d'un produit anti-mousse, temps de pose, puis rinçage à basse pression. Idéal pour les façades en crépi, les enduits décoratifs, les joints anciens.</p>
       <h2>Et le démoussage de toiture ?</h2>
       <p>Toujours en nettoyage doux + traitement préventif. La haute pression sur des tuiles décolle les sous-couches et peut causer des infiltrations.</p>
-      <p><em>Concept Hygiène est qualifiée Qualibat 2018 pour les travaux de lavage extérieur. Devis gratuit sur place.</em></p>
+      <p><em>BlitzClean est qualifiée Qualibat 2018 pour les travaux de lavage extérieur. Devis gratuit sur place.</em></p>
     `,
   },
   {
@@ -108,7 +108,7 @@ export const fallbackBlogPosts: FallbackPost[] = [
     coverImage: 'https://i.ibb.co/PZhhQQ4x/Whats-App-Image-2025-07-23-at-14-02-40-2.avif',
     category: 'Chantier',
     tags: ['WC chantier', 'sanitaires', 'BTP'],
-    author: 'Joseph — Concept Hygiène',
+    author: 'Joseph — BlitzClean',
     publishedAt: '2026-03-10T09:00:00.000Z',
     metaDescription:
       "À quelle fréquence faire nettoyer ses containers WC de chantier ? Recommandations selon la taille du chantier et le nombre de compagnons.",
@@ -120,7 +120,7 @@ export const fallbackBlogPosts: FallbackPost[] = [
       <p>Deux passages par semaine sont recommandés, avec vidange, désinfection et réapprovisionnement (papier, savon).</p>
       <h2>Gros chantier (15+ compagnons)</h2>
       <p>Trois passages par semaine au minimum. Un suivi photo après chaque intervention permet de garantir la qualité.</p>
-      <p><em>Concept Hygiène intervient sur les chantiers d'Île-de-France pour l'entretien des bases-vie et sanitaires mobiles.</em></p>
+      <p><em>BlitzClean intervient sur les chantiers d'Île-de-France pour l'entretien des bases-vie et sanitaires mobiles.</em></p>
     `,
   },
   {
@@ -132,7 +132,7 @@ export const fallbackBlogPosts: FallbackPost[] = [
     coverImage: 'https://i.ibb.co/ksYYPLZ6/Whats-App-Image-2025-07-23-at-14-02-40-4.avif',
     category: 'Copropriété',
     tags: ['poubelles', 'copropriété', 'syndic'],
-    author: 'Joseph — Concept Hygiène',
+    author: 'Joseph — BlitzClean',
     publishedAt: '2026-02-24T09:00:00.000Z',
     metaDescription:
       "Sortie de poubelles en copropriété : obligations du syndic, du gardien et du prestataire. Bonnes pratiques pour éviter les sanctions municipales.",
@@ -144,7 +144,7 @@ export const fallbackBlogPosts: FallbackPost[] = [
       <p>La tâche est généralement incluse dans la fiche de poste du gardien. En cas d'absence (congé, arrêt), il faut prévoir un remplaçant ou un prestataire d'appoint.</p>
       <h2>Sanctions en cas de manquement</h2>
       <p>Selon les communes, des amendes peuvent être appliquées si les bacs restent sur la voie publique en dehors des plages autorisées (souvent 50 à 150 €).</p>
-      <p><em>Concept Hygiène propose un service de sortie / rentrée des bacs pour copropriétés et particuliers, avec nettoyage du local poubelles inclus.</em></p>
+      <p><em>BlitzClean propose un service de sortie / rentrée des bacs pour copropriétés et particuliers, avec nettoyage du local poubelles inclus.</em></p>
     `,
   },
   {
@@ -156,7 +156,7 @@ export const fallbackBlogPosts: FallbackPost[] = [
     coverImage: 'https://i.ibb.co/wh6tfrtk/Concept-Hygiene-Nettoyage-bureau.webp',
     category: 'Résidentiel',
     tags: ['déménagement', 'état des lieux', 'location'],
-    author: 'Joseph — Concept Hygiène',
+    author: 'Joseph — BlitzClean',
     publishedAt: '2026-02-08T09:00:00.000Z',
     metaDescription:
       "Faut-il rendre un logement parfaitement nettoyé à l'état des lieux ? Ce que dit la loi et ce qu'attendent vraiment les bailleurs.",
@@ -168,7 +168,7 @@ export const fallbackBlogPosts: FallbackPost[] = [
       <p>Si le logement est rendu sale, le bailleur peut faire intervenir une entreprise de nettoyage et déduire le coût de la caution, sur facture justificative.</p>
       <h2>Notre recommandation</h2>
       <p>Faire réaliser un nettoyage professionnel coûte généralement entre 150 et 400 € selon la surface, et évite tout litige sur la caution. C'est presque toujours rentable.</p>
-      <p><em>Concept Hygiène prend en charge les nettoyages d'état des lieux à Mée-sur-Seine et dans toute l'Île-de-France.</em></p>
+      <p><em>BlitzClean prend en charge les nettoyages d'état des lieux à Mée-sur-Seine et dans toute l'Île-de-France.</em></p>
     `,
   },
 ]
@@ -178,7 +178,7 @@ export const fallbackBlogSettings = {
   title: 'Conseils & actualités',
   description:
     "Des articles pratiques pour bien préparer un chantier, optimiser un ménage Airbnb, choisir une méthode de lavage de façade ou comprendre vos obligations en copropriété.",
-  eyebrow: 'Conseils Concept Hygiène',
+  eyebrow: 'Conseils BlitzClean',
   heroImage: 'https://i.ibb.co/hR0rMFZq/Concept-Hygiene-Nettoyage-professionnel.webp',
   categories: ['Chantier', 'Airbnb', 'Lavage extérieur', 'Copropriété', 'Résidentiel'],
 }

@@ -7,7 +7,7 @@ import { useContent } from '@/hooks/use-content'
 
 const defaultTestimonials = [
   { name: 'Karim B.', company: 'Conducteur de travaux — Melun', text: "Joseph est passé sur deux de nos chantiers en moins de 48h. Baraques nickel, WC chantier remis comme neufs. On le rappellera.", stars: 5 },
-  { name: 'Sophie L.', company: 'Hôte Airbnb — Fontainebleau', text: "Je gère 4 logements, le ménage entre deux locations était un cauchemar. Concept Hygiène est ponctuel, soigné et discret avec mes voyageurs.", stars: 5 },
+  { name: 'Sophie L.', company: 'Hôte Airbnb — Fontainebleau', text: "Je gère 4 logements, le ménage entre deux locations était un cauchemar. BlitzClean est ponctuel, soigné et discret avec mes voyageurs.", stars: 5 },
   { name: 'Marc D.', company: 'Particulier — Le Mée-sur-Seine', text: "Après les travaux dans la maison, on n'arrivait pas à enlever les poussières et traces. Joseph a tout remis en état en une journée.", stars: 5 },
   { name: 'Nadia P.', company: 'Syndic — Évry', text: "On lui a confié la sortie des poubelles et le local des bacs sur deux résidences. Sérieux, jamais en retard, jamais à relancer.", stars: 5 },
   { name: 'Thomas R.', company: 'Chef de chantier — Corbeil', text: "Avant lui on bricolait avec des intérimaires pour le nettoyage des bungalows. Là on a un seul interlocuteur, un devis clair, un travail propre.", stars: 5 },

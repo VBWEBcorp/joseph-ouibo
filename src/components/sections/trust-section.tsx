@@ -57,7 +57,7 @@ function ImageMarquee() {
           >
             <Image
               src={src}
-              alt="Réalisation Concept Hygiène"
+              alt="Réalisation BlitzClean"
               fill
               sizes="(min-width:640px) 288px, 256px"
               loading="lazy"

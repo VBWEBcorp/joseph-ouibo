@@ -39,7 +39,7 @@ function ComingSoonInner() {
         )}
 
         <p className="mx-auto mt-6 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground">
-          En attendant, Concept Hygiène intervient déjà sur cette zone et pour cette prestation.
+          En attendant, BlitzClean intervient déjà sur cette zone et pour cette prestation.
           Appelez-nous ou demandez un devis en ligne&nbsp;: réponse sous 24h.
         </p>
 

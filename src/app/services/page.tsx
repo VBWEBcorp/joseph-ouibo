@@ -8,7 +8,7 @@ import {
 } from '@/components/seo/json-ld'
 
 const description =
-  'Nettoyage de bâtiments, lavage de façades, fin de chantier, baraques BTP, locations Airbnb, sortie de poubelles, maçonnerie : toutes les prestations de Concept Hygiène à Mée-sur-Seine et 100 km autour.'
+  'Nettoyage de bâtiments, lavage de façades, fin de chantier, baraques BTP, locations Airbnb, sortie de poubelles, maçonnerie : toutes les prestations de BlitzClean à Mée-sur-Seine et 100 km autour.'
 
 const services = [
   {

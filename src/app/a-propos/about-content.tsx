@@ -17,7 +17,7 @@ const defaultIcons = [HeartHandshake, ShieldCheck, Award]
 const defaults = {
   hero: {
     eyebrow: 'À propos',
-    title: 'Concept Hygiène, le nettoyage par un vrai pro',
+    title: 'BlitzClean, le nettoyage par un vrai pro',
     description:
       "Une entreprise familiale du Mée-sur-Seine, qualifiée Qualibat depuis 2018, qui intervient pour les particuliers, les copropriétés, les entreprises et les chantiers du BTP dans toute l'Île-de-France.",
     image: pageHeroImages.about,
@@ -31,7 +31,7 @@ const defaults = {
     {
       title: 'Sérieux',
       description:
-        "Devis détaillé sur place, prix tenu, délais respectés. Concept Hygiène est qualifiée Qualibat 2018, gage de respect des règles de l'art.",
+        "Devis détaillé sur place, prix tenu, délais respectés. BlitzClean est qualifiée Qualibat 2018, gage de respect des règles de l'art.",
     },
     {
       title: 'Polyvalence',
@@ -145,7 +145,7 @@ export function AboutContent() {
           <SectionTitle
             eyebrow="Notre histoire"
             title="Du chantier au logement, un seul interlocuteur"
-            description="Joseph a fondé Concept Hygiène pour répondre à un constat simple : trouver un nettoyage à la fois sérieux, polyvalent et joignable est devenu compliqué. L'entreprise est qualifiée Qualibat depuis 2018 et intervient aussi bien sur les bâtiments que sur les chantiers BTP."
+            description="Joseph a fondé BlitzClean pour répondre à un constat simple : trouver un nettoyage à la fois sérieux, polyvalent et joignable est devenu compliqué. L'entreprise est qualifiée Qualibat depuis 2018 et intervient aussi bien sur les bâtiments que sur les chantiers BTP."
           />
           <ValuesTimeline values={values} />
         </div>
@@ -166,7 +166,7 @@ export function AboutContent() {
               >
                 <Image
                   src={src}
-                  alt="Réalisation Concept Hygiène"
+                  alt="Réalisation BlitzClean"
                   fill
                   sizes="(min-width:768px) 25vw, 50vw"
                   loading="lazy"

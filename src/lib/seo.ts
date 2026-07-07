@@ -1,16 +1,16 @@
 export const siteConfig = {
-  name: 'Concept Hygiène',
-  shortName: 'Concept Hygiène',
-  url: 'https://www.concepthygiene.fr',
+  name: 'BlitzClean 77',
+  shortName: 'BlitzClean 77',
+  url: 'https://www.blitzclean77.fr',
   locale: 'fr_FR',
   description:
     'Nettoyage de baraques de chantier, containers WC, locations Airbnb, maisons et sortie de poubelles. Intervention rapide à 100 km autour de Mée-sur-Seine (77).',
-  ogImage: 'https://www.concepthygiene.fr/og.png',
-  twitterHandle: '@concepthygiene',
+  ogImage: 'https://www.blitzclean77.fr/og.png',
+  twitterHandle: '@blitzclean77',
   themeColor: '#059669',
   phone: '07 61 05 57 39',
   phoneE164: '+33761055739',
-  email: 'contact@concepthygiene.fr',
+  email: 'blitzclean77@gmail.com',
   address: {
     street: '[adresse à compléter]',
     city: 'Le Mée-sur-Seine',
@@ -24,7 +24,7 @@ export const siteConfig = {
   },
   serviceRadiusKm: 100,
   socials: {
-    instagram: 'https://www.instagram.com/concepthygiene77etservice/',
+    instagram: 'https://www.instagram.com/blitzclean77/',
   },
   hours: {
     weekdays: '08:00 – 18:00',

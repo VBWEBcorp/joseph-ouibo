@@ -75,7 +75,7 @@ export function Logo({
           )}
         >
           <span className="block font-display text-base font-bold tracking-tight">
-            Concept
+            BlitzClean
           </span>
           <span
             className={cn(
@@ -83,7 +83,7 @@ export function Logo({
               isInverted ? 'text-white/70' : 'text-primary'
             )}
           >
-            Hygiène
+            77 · La propreté sans attendre
           </span>
         </span>
       )}

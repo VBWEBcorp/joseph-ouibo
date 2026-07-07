@@ -11,10 +11,10 @@ import { storyImage } from '@/lib/images'
 const ease = [0.22, 1, 0.36, 1] as const
 
 const defaults = {
-  eyebrow: 'Concept Hygiène',
+  eyebrow: 'BlitzClean',
   title: 'Un artisan du nettoyage, pas une plateforme',
   paragraph1:
-    "Concept Hygiène, c'est avant tout un interlocuteur unique pour vos besoins en nettoyage : Joseph se déplace lui-même, devis sur place et travail soigné. Pas de sous-traitance opaque, pas de devis fantôme.",
+    "BlitzClean, c'est avant tout un interlocuteur unique pour vos besoins en nettoyage : Joseph se déplace lui-même, devis sur place et travail soigné. Pas de sous-traitance opaque, pas de devis fantôme.",
   paragraph2:
     "On intervient aussi bien sur les bâtiments (appartements, bureaux, commerces), en lavage extérieur (façades, toitures, terrasses), que sur les chantiers BTP, les locations Airbnb et la sortie de poubelles. Entreprise certifiée Qualibat depuis 2018.",
   image: storyImage,
@@ -25,7 +25,7 @@ export function StorySection() {
   const story = data.story ?? defaults
 
   return (
-    <section className="border-b border-border/60 bg-background">
+    <section className="border-b border-border/60 bg-muted/30">
       <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
         <div className="grid items-center gap-14 md:grid-cols-2 md:gap-16 lg:gap-24">
           {/* Text */}
@@ -59,7 +59,7 @@ export function StorySection() {
                 className="group inline-flex items-center gap-2 text-sm font-semibold text-foreground"
               >
                 <span className="border-b border-foreground/60 pb-0.5 transition-colors duration-300 group-hover:border-foreground">
-                  En savoir plus sur Concept Hygiène
+                  En savoir plus sur BlitzClean
                 </span>
                 <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
