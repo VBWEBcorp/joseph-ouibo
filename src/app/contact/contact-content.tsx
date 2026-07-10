@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Clock, Mail, MapPin, Phone } from 'lucide-react'
+import { CheckCircle2, Clock, Mail, MapPin, Phone } from 'lucide-react'
+import { useState } from 'react'
 
 import { PageHero } from '@/components/sections/page-hero'
 import { Button } from '@/components/ui/button'
@@ -9,6 +10,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useContent } from '@/hooks/use-content'
+import { submitContactForm } from '@/lib/contact-form'
 import { pageHeroImages } from '@/lib/images'
 import { siteConfig } from '@/lib/seo'
 
@@ -35,6 +37,33 @@ export function ContactContent() {
   const { data } = useContent('contact', defaults)
   const hero = data.hero ?? defaults.hero
   const info = data.info ?? defaults.info
+
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const form = e.currentTarget
+    const fd = new FormData(form)
+    setStatus('sending')
+    setErrorMsg('')
+    try {
+      await submitContactForm({
+        prenom: (fd.get('firstname') as string) || '',
+        nom: (fd.get('lastname') as string) || '',
+        email: (fd.get('email') as string) || '',
+        telephone: (fd.get('phone') as string) || '',
+        prestation: (fd.get('prestation') as string) || '',
+        message: (fd.get('message') as string) || '',
+        source: 'Page contact',
+      })
+      setStatus('success')
+      form.reset()
+    } catch (err) {
+      setStatus('error')
+      setErrorMsg(err instanceof Error ? err.message : "L'envoi a échoué.")
+    }
+  }
 
   // Fallback vers siteConfig si les champs sont vides
   const phone = info.phone || siteConfig.phone
@@ -67,11 +96,32 @@ export function ContactContent() {
                   <CardTitle className="font-display text-lg">Demander un devis</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                  {status === 'success' ? (
+                    <div className="flex flex-col items-center gap-4 rounded-xl border border-emerald-500/25 bg-emerald-500/5 px-6 py-12 text-center">
+                      <span className="flex size-12 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-600 ring-1 ring-emerald-500/20 dark:text-emerald-400">
+                        <CheckCircle2 className="size-6" aria-hidden />
+                      </span>
+                      <div className="space-y-1">
+                        <p className="font-display text-lg font-semibold text-foreground">Demande bien envoyée&nbsp;!</p>
+                        <p className="text-sm text-muted-foreground">
+                          Merci, nous avons bien reçu votre demande. On vous rappelle sous 24h pour votre devis gratuit.
+                        </p>
+                      </div>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={() => setStatus('idle')}
+                        className="mt-1"
+                      >
+                        Envoyer une autre demande
+                      </Button>
+                    </div>
+                  ) : (
+                  <form className="space-y-5" onSubmit={handleSubmit}>
                     <div className="grid gap-5 sm:grid-cols-2">
                       <div className="space-y-2">
                         <Label htmlFor="firstname">Prénom</Label>
-                        <Input id="firstname" name="firstname" placeholder="Jean" autoComplete="given-name" className="h-11 rounded-xl" />
+                        <Input id="firstname" name="firstname" required placeholder="Jean" autoComplete="given-name" className="h-11 rounded-xl" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="lastname">Nom</Label>
@@ -80,11 +130,11 @@ export function ContactContent() {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input id="email" name="email" type="email" placeholder="jean@exemple.fr" autoComplete="email" className="h-11 rounded-xl" />
+                      <Input id="email" name="email" type="email" required placeholder="jean@exemple.fr" autoComplete="email" className="h-11 rounded-xl" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="phone">Téléphone</Label>
-                      <Input id="phone" name="phone" type="tel" placeholder="06 12 34 56 78" autoComplete="tel" className="h-11 rounded-xl" />
+                      <Input id="phone" name="phone" type="tel" required placeholder="06 12 34 56 78" autoComplete="tel" className="h-11 rounded-xl" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="prestation">Type de prestation</Label>
@@ -110,18 +160,26 @@ export function ContactContent() {
                         id="message"
                         name="message"
                         rows={5}
+                        required
                         placeholder="Surface, fréquence, ville, contraintes particulières…"
                         className="w-full rounded-xl border border-input bg-transparent px-3 py-2.5 text-sm leading-relaxed text-foreground transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
                       />
                     </div>
+                    {status === 'error' && (
+                      <p className="rounded-lg border border-red-500/25 bg-red-500/5 px-3 py-2 text-sm text-red-600 dark:text-red-400">
+                        {errorMsg}
+                      </p>
+                    )}
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-primary text-white hover:bg-primary/90 focus-visible:ring-primary/40"
+                      disabled={status === 'sending'}
+                      className="w-full bg-primary text-white hover:bg-primary/90 focus-visible:ring-primary/40 disabled:opacity-70"
                     >
-                      Envoyer ma demande
+                      {status === 'sending' ? 'Envoi en cours…' : 'Envoyer ma demande'}
                     </Button>
                   </form>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>

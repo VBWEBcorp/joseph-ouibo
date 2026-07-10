@@ -1,7 +1,7 @@
 'use client'
 
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowRight, Award, Check, Phone, Sparkles } from 'lucide-react'
+import { ArrowRight, Award, Check, CheckCircle2, Phone, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useContent } from '@/hooks/use-content'
+import { submitContactForm } from '@/lib/contact-form'
 import { heroImages } from '@/lib/images'
 import { siteConfig } from '@/lib/seo'
 
@@ -37,6 +38,31 @@ export function HeroSection() {
   const images = hero.images ?? defaults.images
   const bullets = hero.bullets ?? defaults.bullets
   const [current, setCurrent] = useState(0)
+
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const form = e.currentTarget
+    const fd = new FormData(form)
+    setStatus('sending')
+    setErrorMsg('')
+    try {
+      await submitContactForm({
+        nomComplet: (fd.get('name') as string) || '',
+        telephone: (fd.get('phone') as string) || '',
+        email: (fd.get('email') as string) || '',
+        prestation: (fd.get('prestation') as string) || '',
+        source: "Page d'accueil (bloc devis)",
+      })
+      setStatus('success')
+      form.reset()
+    } catch (err) {
+      setStatus('error')
+      setErrorMsg(err instanceof Error ? err.message : "L'envoi a échoué.")
+    }
+  }
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -164,9 +190,29 @@ export function HeroSection() {
                 </div>
               </div>
 
+              {status === 'success' ? (
+                <div className="mt-4 flex flex-col items-center gap-3 rounded-xl border border-emerald-500/25 bg-emerald-500/5 px-4 py-8 text-center">
+                  <span className="flex size-11 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-600 ring-1 ring-emerald-500/20 dark:text-emerald-400">
+                    <CheckCircle2 className="size-5" aria-hidden />
+                  </span>
+                  <div className="space-y-0.5">
+                    <p className="font-display text-sm font-bold text-foreground">Demande envoyée&nbsp;!</p>
+                    <p className="text-[12px] text-muted-foreground">
+                      Merci, on vous rappelle sous 24h pour votre devis gratuit.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setStatus('idle')}
+                    className="text-[12px] font-semibold text-primary hover:underline"
+                  >
+                    Envoyer une autre demande
+                  </button>
+                </div>
+              ) : (
               <form
                 className="mt-4 space-y-3"
-                onSubmit={(e) => e.preventDefault()}
+                onSubmit={handleSubmit}
               >
                 <div className="grid gap-3 sm:grid-cols-2">
                   <div className="space-y-1">
@@ -176,6 +222,7 @@ export function HeroSection() {
                     <Input
                       id="hero-name"
                       name="name"
+                      required
                       placeholder="Jean Dupont"
                       autoComplete="name"
                       className="h-9 rounded-lg text-sm"
@@ -189,6 +236,7 @@ export function HeroSection() {
                       id="hero-phone"
                       name="phone"
                       type="tel"
+                      required
                       placeholder="06 12 34 56 78"
                       autoComplete="tel"
                       className="h-9 rounded-lg text-sm"
@@ -204,6 +252,7 @@ export function HeroSection() {
                     id="hero-email"
                     name="email"
                     type="email"
+                    required
                     placeholder="jean@exemple.fr"
                     autoComplete="email"
                     className="h-9 rounded-lg text-sm"
@@ -233,18 +282,28 @@ export function HeroSection() {
                   </select>
                 </div>
 
+                {status === 'error' && (
+                  <p className="rounded-lg border border-red-500/25 bg-red-500/5 px-3 py-2 text-[12px] text-red-600 dark:text-red-400">
+                    {errorMsg}
+                  </p>
+                )}
+
                 <Button
                   type="submit"
-                  className="group mt-1 h-11 w-full bg-primary text-white shadow-md shadow-primary/25 hover:bg-primary/90 focus-visible:ring-primary/40"
+                  disabled={status === 'sending'}
+                  className="group mt-1 h-11 w-full bg-primary text-white shadow-md shadow-primary/25 hover:bg-primary/90 focus-visible:ring-primary/40 disabled:opacity-70"
                 >
-                  Recevoir mon devis
-                  <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
+                  {status === 'sending' ? 'Envoi en cours…' : 'Recevoir mon devis'}
+                  {status !== 'sending' && (
+                    <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
+                  )}
                 </Button>
 
                 <p className="text-center text-[10px] text-muted-foreground">
                   Vos informations restent confidentielles. Aucun spam.
                 </p>
               </form>
+              )}
             </div>
           </motion.div>
         </div>
