@@ -12,11 +12,26 @@ export const siteConfig = {
   phoneE164: '+33761055739',
   email: 'blitzclean77@gmail.com',
   address: {
-    street: '[adresse à compléter]',
+    street: '34 Square des Sorbiers',
     city: 'Le Mée-sur-Seine',
     postalCode: '77350',
     country: 'FR',
     region: 'Île-de-France',
+  },
+  // Données légales officielles (extrait Kbis — Greffe du Tribunal de Commerce de Melun)
+  legal: {
+    companyName: 'Blitzclean77 et services',
+    tradeName: 'Blitzclean77',
+    legalForm: 'SASU (Société par actions simplifiée à associé unique)',
+    capital: '1,00 €',
+    siren: '107 280 760',
+    rcs: 'Melun B 107 280 760',
+    euid: 'FR7702.107280760',
+    vat: 'FR 75 107 280 760',
+    gestionNumber: '2026 B 01922',
+    registrationDate: '28 juillet 2026',
+    director: 'Joseph Peston-Comminges',
+    court: 'Melun',
   },
   geo: {
     latitude: 48.5394,

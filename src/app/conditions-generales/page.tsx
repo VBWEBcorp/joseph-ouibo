@@ -210,7 +210,7 @@ export default function CGUPage() {
                 Les présentes CGU sont régies par le droit français. En cas de litige relatif
                 à l&apos;interprétation ou l&apos;exécution des présentes, les parties s&apos;engagent à
                 rechercher une solution amiable. À défaut, le litige sera porté devant les
-                tribunaux compétents du ressort de [Ville - à compléter].
+                tribunaux compétents du ressort de {siteConfig.legal.court}.
               </p>
             </section>
 

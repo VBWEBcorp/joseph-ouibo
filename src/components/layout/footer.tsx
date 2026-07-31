@@ -133,7 +133,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col items-start justify-between gap-3 py-6 sm:flex-row sm:items-center">
           <p className="text-xs text-zinc-500">
-            © {new Date().getFullYear()} {siteConfig.name} — SIRET à compléter
+            © {new Date().getFullYear()} {siteConfig.legal.tradeName} — SIREN {siteConfig.legal.siren}
           </p>
           <p className="text-xs text-zinc-500">
             Tous droits réservés

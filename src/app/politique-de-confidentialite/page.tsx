@@ -71,7 +71,8 @@ export default function PrivacyPage() {
               <h2>1. Responsable du traitement</h2>
               <p>Le responsable du traitement des données est :</p>
               <ul className="list-inside list-disc space-y-1 pl-1">
-                <li><strong>Raison sociale :</strong> {siteConfig.name}</li>
+                <li><strong>Raison sociale :</strong> {siteConfig.legal.companyName}</li>
+                <li><strong>Représentant légal :</strong> {siteConfig.legal.director}</li>
                 <li>
                   <strong>Adresse :</strong> {siteConfig.address.street}, {siteConfig.address.postalCode}{' '}
                   {siteConfig.address.city}
@@ -80,7 +81,7 @@ export default function PrivacyPage() {
                 <li><strong>Téléphone :</strong> {siteConfig.phone}</li>
               </ul>
               <p>
-                Délégué à la protection des données (DPO) : [Nom du DPO ou &quot;non désigné&quot;]
+                Délégué à la protection des données (DPO) : non désigné.
               </p>
             </section>
 
@@ -181,9 +182,9 @@ export default function PrivacyPage() {
                     </tr>
                     <tr>
                       <td className="py-2.5 pr-4">Hébergement</td>
-                      <td className="py-2.5 pr-4">[Vercel / OVH / autre - à compléter]</td>
+                      <td className="py-2.5 pr-4">Netlify, Inc.</td>
                       <td className="py-2.5 pr-4">Hébergement du site et des API</td>
-                      <td className="py-2.5">[À compléter]</td>
+                      <td className="py-2.5">USA (clauses contractuelles types)</td>
                     </tr>
                     <tr>
                       <td className="py-2.5 pr-4">Base de données</td>

@@ -42,11 +42,8 @@ export default function LegalPage() {
             Mentions légales
           </h1>
           <p className="mt-4 text-sm text-muted-foreground">
-            Dernière mise à jour : 3 juillet 2026
+            Dernière mise à jour : 31 juillet 2026
           </p>
-          <div className="mt-6 rounded-xl border border-amber-300/40 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-500/30 dark:bg-amber-500/10 dark:text-amber-200">
-            <strong>Maquette :</strong> les champs entre crochets <code>[…]</code> sont à compléter par BlitzClean avant la mise en ligne (SIRET, forme juridique, hébergeur, etc.).
-          </div>
 
           <article className="mt-10 space-y-10 text-sm leading-relaxed text-muted-foreground [&_h2]:font-display [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-foreground [&_h3]:text-sm [&_h3]:font-semibold [&_h3]:text-foreground">
 
@@ -56,12 +53,13 @@ export default function LegalPage() {
                 Le site accessible à l&apos;adresse <strong>{siteConfig.url}</strong> est édité par :
               </p>
               <ul className="list-inside list-disc space-y-1 pl-1">
-                <li><strong>Raison sociale :</strong> {siteConfig.name}</li>
-                <li><strong>Forme juridique :</strong> [SARL / SAS / EI / Auto-entrepreneur - à compléter]</li>
-                <li><strong>Capital social :</strong> [Montant] € (si applicable)</li>
-                <li><strong>SIRET :</strong> [N° SIRET à compléter]</li>
-                <li><strong>RCS :</strong> [Ville] B [N° RCS] (si applicable)</li>
-                <li><strong>N° TVA intracommunautaire :</strong> [FR XX XXXXXXXXX - à compléter]</li>
+                <li><strong>Raison sociale :</strong> {siteConfig.legal.companyName}</li>
+                <li><strong>Nom commercial :</strong> {siteConfig.legal.tradeName}</li>
+                <li><strong>Forme juridique :</strong> {siteConfig.legal.legalForm}</li>
+                <li><strong>Capital social :</strong> {siteConfig.legal.capital}</li>
+                <li><strong>SIREN :</strong> {siteConfig.legal.siren}</li>
+                <li><strong>RCS :</strong> {siteConfig.legal.rcs}</li>
+                <li><strong>N° TVA intracommunautaire :</strong> {siteConfig.legal.vat}</li>
                 <li>
                   <strong>Siège social :</strong> {siteConfig.address.street},{' '}
                   {siteConfig.address.postalCode} {siteConfig.address.city}
@@ -70,7 +68,7 @@ export default function LegalPage() {
                 <li><strong>Email :</strong> {siteConfig.email}</li>
               </ul>
               <p>
-                <strong>Directeur de la publication :</strong> [Nom et prénom du responsable - à compléter]
+                <strong>Directeur de la publication :</strong> {siteConfig.legal.director}
               </p>
             </section>
 
@@ -78,9 +76,9 @@ export default function LegalPage() {
               <h2>2. Hébergement</h2>
               <p>Le site est hébergé par :</p>
               <ul className="list-inside list-disc space-y-1 pl-1">
-                <li><strong>Raison sociale :</strong> [Vercel Inc. / OVHcloud / autre - à compléter]</li>
-                <li><strong>Adresse :</strong> [Adresse de l&apos;hébergeur]</li>
-                <li><strong>Site web :</strong> [URL de l&apos;hébergeur]</li>
+                <li><strong>Raison sociale :</strong> Netlify, Inc.</li>
+                <li><strong>Adresse :</strong> 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis</li>
+                <li><strong>Site web :</strong> https://www.netlify.com</li>
               </ul>
               <h3 className="pt-2">Services techniques complémentaires</h3>
               <ul className="list-inside list-disc space-y-1 pl-1">
@@ -190,13 +188,13 @@ export default function LegalPage() {
                 Les présentes mentions légales sont régies par le droit français.
                 En cas de litige, et après l&apos;échec de toute tentative de
                 résolution amiable dans un délai de 30 jours, les tribunaux
-                compétents du ressort de [Ville - à compléter] seront seuls
+                compétents du ressort de {siteConfig.legal.court} seront seuls
                 compétents.
               </p>
               <p>
                 Conformément à l&apos;article L.612-1 du Code de la consommation,
                 le consommateur a le droit de recourir gratuitement à un médiateur
-                de la consommation. Médiateur : [Nom et coordonnées du médiateur - à compléter].
+                de la consommation. Médiateur : médiateur de la consommation en cours de désignation.
               </p>
               <p>
                 Plateforme de règlement en ligne des litiges de la Commission européenne :{' '}
@@ -214,9 +212,9 @@ export default function LegalPage() {
             <section className="space-y-3">
               <h2>9. Crédits</h2>
               <ul className="list-inside list-disc space-y-1 pl-1">
-                <li><strong>Conception et développement :</strong> [À compléter]</li>
-                <li><strong>Design :</strong> [À compléter]</li>
-                <li><strong>Crédits photos :</strong> [À compléter - ex: Unsplash, photographe, etc.]</li>
+                <li><strong>Conception et développement :</strong> VBWEB</li>
+                <li><strong>Design :</strong> VBWEB</li>
+                <li><strong>Crédits photos :</strong> Unsplash et photographies de l&apos;entreprise</li>
                 <li><strong>Icônes :</strong> Lucide Icons (licence ISC)</li>
                 <li><strong>Polices :</strong> Inter et Plus Jakarta Sans (Google Fonts, licence Open Font)</li>
               </ul>
