@@ -116,7 +116,8 @@ export default async function BlogPostPage({ params }: { params: Params }) {
 
   if (!post) notFound()
 
-  // JSON-LD pour le référencement
+  // JSON-LD pour le référencement : celui fourni par PHARE s'il existe (stocké
+  // tel quel sur l'article), sinon celui généré à partir de ses champs.
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -142,6 +143,9 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     keywords: post.tags?.join(', '),
   }
 
+  // `</script>` échappé : le JSON-LD de PHARE ne peut pas casser la balise.
+  const articleLd = (post.jsonLd || JSON.stringify(jsonLd)).replace(/</g, '\\u003c')
+
   // On sérialise un post propre à passer au client component
   const initialPost = {
     _id: String(post._id ?? post.slug),
@@ -166,7 +170,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: articleLd }}
       />
       <BlogPostContent slug={slug} initialPost={initialPost} />
     </>
