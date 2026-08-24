@@ -1,12 +1,26 @@
 import type { Metadata } from 'next'
 
 import { siteConfig } from '@/lib/seo'
-import { pageHeroImages } from '@/lib/images'
+import { coproFacadeImage, coproSolImage, pageHeroImages } from '@/lib/images'
 import GalleryContent from './gallery-content'
 
 export const revalidate = 3600
 
 const fallbackImages = [
+  {
+    _id: 'fb-copro-sol',
+    title: 'Cour de copropriété',
+    description: "Sol extérieur d'une résidence collective remis au propre, jusqu'au porche d'entrée.",
+    imageUrl: coproSolImage,
+    category: 'Copropriété',
+  },
+  {
+    _id: 'fb-copro-facade',
+    title: "Façade d'immeuble",
+    description: 'Lavage extérieur sur une résidence collective, du rez-de-chaussée aux balcons.',
+    imageUrl: coproFacadeImage,
+    category: 'Lavage extérieur',
+  },
   {
     _id: 'fb-1',
     title: 'Nettoyage de bureaux',

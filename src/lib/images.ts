@@ -11,6 +11,11 @@ const NEW1 = 'https://i.ibb.co/rGXkM9xD/07e063d9-02fd-4dd4-b8c2-bf207fcd896a-1-a
 const NEW2 = 'https://i.ibb.co/gLCGV5MX/07e063d9-02fd-4dd4-b8c2-bf207fcd896a-1-all-5909.jpg'
 const NEW3 = 'https://i.ibb.co/ccZg777r/07e063d9-02fd-4dd4-b8c2-bf207fcd896a-1-all-5901.jpg'
 
+// Photos transmises par Joseph (août 2026) — résidence en copropriété.
+// Servies en local depuis public/realisations, comme le logo.
+export const coproSolImage = '/realisations/nettoyage-cour-copropriete.webp'
+export const coproFacadeImage = '/realisations/lavage-facade-immeuble.webp'
+
 export const heroImages = [
   NEW2,
   NEW1,
@@ -18,6 +23,9 @@ export const heroImages = [
 ] as const
 
 export const galleryImages = [
+  // Copropriétés & extérieurs
+  coproSolImage,
+  coproFacadeImage,
   // Bureaux & commerces
   NEW1,
   NEW2,
