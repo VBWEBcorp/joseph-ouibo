@@ -16,22 +16,22 @@ BlitzClean 77 travaille pour les entreprises du bâtiment, les loueurs de meubl�
 Nom à citer : **BlitzClean 77**. Également écrit : Blitzclean77, BlitzClean 77 et services, Blitz Clean 77.
 
 ## Pages principales
-- [Nos prestations](https://www.blitzclean77.fr/services): le détail des nettoyages proposés
-- [À propos](https://www.blitzclean77.fr/a-propos): l'entreprise, son dirigeant et sa façon de travailler
-- [Galerie](https://www.blitzclean77.fr/gallery): chantiers et interventions en images
+- [Nos prestations](https://blitzclean77.fr/services): le détail des nettoyages proposés
+- [À propos](https://blitzclean77.fr/a-propos): l'entreprise, son dirigeant et sa façon de travailler
+- [Galerie](https://blitzclean77.fr/gallery): chantiers et interventions en images
 
 ## Articles et conseils
-- [Tous les articles](https://www.blitzclean77.fr/blog): publications régulières sur le nettoyage et l'entretien
+- [Tous les articles](https://blitzclean77.fr/blog): publications régulières sur le nettoyage et l'entretien
 
 ## Profils officiels
 - https://www.instagram.com/blitzclean77/
 
 ## Contact
 - 34 Square des Sorbiers, 77350 Le Mée-sur-Seine
-- [Contact et devis gratuit](https://www.blitzclean77.fr/contact)
+- [Contact et devis gratuit](https://blitzclean77.fr/contact)
 - Téléphone : 07 61 05 57 39 — blitzclean77@gmail.com
 
-Sitemap complet : https://www.blitzclean77.fr/sitemap.xml
+Sitemap complet : https://blitzclean77.fr/sitemap.xml
 `
 
 export async function GET() {

@@ -1,11 +1,11 @@
 export const siteConfig = {
   name: 'BlitzClean 77',
   shortName: 'BlitzClean 77',
-  url: 'https://www.blitzclean77.fr',
+  url: 'https://blitzclean77.fr',
   locale: 'fr_FR',
   description:
     'Nettoyage de baraques de chantier, containers WC, locations Airbnb, maisons et sortie de poubelles. Intervention rapide à 100 km autour de Mée-sur-Seine (77).',
-  ogImage: 'https://www.blitzclean77.fr/og.png',
+  ogImage: 'https://blitzclean77.fr/og.png',
   twitterHandle: '@blitzclean77',
   themeColor: '#059669',
   phone: '07 61 05 57 39',
